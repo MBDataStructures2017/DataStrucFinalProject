@@ -62,6 +62,7 @@ public class Main extends Application {
 		//Load the txt file with all subject names.
 		ArrayList<String> subjectNames = txtToStringArrayList("Data/Subjects.txt");
 		System.out.println("Lets Hope this gets on gitHub!");
+		System.out.println("Another push from my desktop!");
 		
 		showMainView();
 		showMainItems(subjectNames);//Passes in the names of all subjects for the user to potentially select.
