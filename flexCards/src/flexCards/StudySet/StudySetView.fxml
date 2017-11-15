@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="flexCards.StudySet.StudySetViewController">
+   <top>
+      <Label fx:id="title" text="Study Set" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="34.0" />
+         </font>
+      </Label>
+   </top>
+   <center>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="421.4117736816406" minWidth="10.0" prefWidth="345.54901123046875" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="520.1764831542969" minWidth="10.0" prefWidth="514.4509887695312" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <BorderPane.margin>
+            <Insets bottom="40.0" left="20.0" right="20.0" top="40.0" />
+         </BorderPane.margin>
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label text="Your flexCards">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <ListView fx:id="cards" prefHeight="470.0" prefWidth="345.0" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="30.0" GridPane.columnIndex="1">
+               <children>
+                  <Button mnemonicParsing="false" text="Button">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" text="Button">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>

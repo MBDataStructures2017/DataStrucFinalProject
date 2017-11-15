@@ -1,0 +1,2 @@
+Civil War*1*1*1*<f>Event Name*Causes*Effects*Notable Parties*</f><KI>*F1->F2*F1->F3*F1->F4*F2->F1*F3->F1*</KI>
+1980s*1*1*1*<f>Event Name*Causes*Effects*Notable Parties*</f><KI>*F1->F2*F1->F3*F1->F4*F2->F1*F3->F1*</KI>

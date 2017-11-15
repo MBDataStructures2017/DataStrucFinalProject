@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="flexCards.Subject.SubjectViewController">
+   <top>
+      <Label fx:id="subjectTitle" text="Subject View" BorderPane.alignment="BOTTOM_CENTER">
+         <font>
+            <Font size="25.0" />
+         </font></Label>
+   </top>
+   <center>
+      <GridPane prefHeight="470.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="440.5970153808594" minWidth="10.0" prefWidth="369.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="792.2685394287109" minWidth="10.0" prefWidth="531.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <BorderPane.margin>
+            <Insets top="40.0" />
+         </BorderPane.margin>
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <ListView fx:id="studySets" prefHeight="467.0" prefWidth="369.0" />
+                  <Button mnemonicParsing="false" onAction="#goStudySet" text="Select This Study Set">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="14.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+               <children>
+                  <Button mnemonicParsing="false" text="Start Main Queue" textFill="#ff7900">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="60.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" text="Add New Study Set" textFill="#01e805">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Button>
+                  <Label text="Label" />
+               </children>
+            </VBox>
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>
