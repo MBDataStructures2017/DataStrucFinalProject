@@ -1,8 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
-</BorderPane>
 
+<BorderPane prefHeight="600.0" prefWidth="900.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <center>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="143.5655059814453" minHeight="10.0" prefHeight="41.58620834350586" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="256.2156524658203" minHeight="10.0" prefHeight="188.41379165649414" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="286.3402404785156" minHeight="10.0" prefHeight="286.3402404785156" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <HBox alignment="CENTER">
+               <children>
+                  <Label text="Study Queue">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+               <children>
+                  <GridPane prefHeight="206.0" prefWidth="534.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="205.59637451171875" minWidth="10.0" prefWidth="205.59637451171875" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="171.50674438476562" minWidth="10.0" prefWidth="142.7802734375" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="185.2197265625" minWidth="10.0" prefWidth="185.2197265625" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="112.82955932617188" minHeight="7.313972473144531" prefHeight="42.260101318359375" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="168.60984802246094" minHeight="10.0" prefHeight="163.73989868164062" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <HBox />
+                        <HBox GridPane.columnIndex="2" />
+                        <HBox GridPane.rowIndex="1" />
+                        <HBox GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <HBox GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+               </children>
+            </HBox>
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>
