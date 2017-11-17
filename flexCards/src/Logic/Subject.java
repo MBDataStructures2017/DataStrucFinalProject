@@ -21,7 +21,7 @@ public class Subject {
 		
 		for(int i = 0; i < studySetLines.size(); i++) {
 			String tempStudySetName = studySetLines.get(i).substring(0, studySetLines.get(i).indexOf("*"));
-			studySets.add(new StudySet(tempStudySetName, filePath+tempStudySetName));
+			studySets.add(new StudySet(tempStudySetName, filePath+tempStudySetName, studySetLines.get(i)));
 		}
 	}
 	

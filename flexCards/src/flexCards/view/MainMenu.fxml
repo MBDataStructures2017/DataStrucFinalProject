@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
@@ -21,13 +22,14 @@
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints maxHeight="249.02674865722656" minHeight="10.0" prefHeight="86.08914947509766" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="356.10550689697266" minHeight="10.0" prefHeight="116.91085052490234" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="312.71917724609375" minHeight="10.0" prefHeight="65.54827880859375" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="252.88113403320312" minHeight="10.0" prefHeight="238.45172119140625" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="249.02674865722656" minHeight="10.0" prefHeight="155.03016662597656" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="249.02674865722656" minHeight="10.0" prefHeight="82.96983337402344" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="356.10550689697266" minHeight="10.0" prefHeight="110.74261474609375" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="312.71917724609375" minHeight="7.62139892578125" prefHeight="69.43954467773438" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="252.88113403320312" minHeight="10.0" prefHeight="124.091064453125" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <VBox alignment="CENTER" prefHeight="117.0" prefWidth="900.0">
+            <VBox alignment="CENTER" prefHeight="117.0" prefWidth="900.0" GridPane.rowIndex="1">
                <children>
                   <Label text="Select your Subject">
                      <font>
@@ -36,7 +38,7 @@
                   </Label>
                </children>
             </VBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
                <children>
                   <ChoiceBox fx:id="subjectSelector" prefHeight="50.0" prefWidth="300.0">
                      <HBox.margin>
@@ -52,7 +54,7 @@
                   <Insets />
                </GridPane.margin>
             </HBox>
-            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="3">
                <children>
                   <Button mnemonicParsing="false" text="Add New Subject" textFill="#10da46">
                      <font>
@@ -61,6 +63,15 @@
                   </Button>
                </children>
             </VBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../res/fC.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
          </children>
       </GridPane>
    </center>

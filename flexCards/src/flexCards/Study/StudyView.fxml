@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-
-<BorderPane prefHeight="600.0" prefWidth="900.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<BorderPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="flexCards.Study.StudyViewController">
    <center>
       <GridPane BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -16,13 +17,13 @@
         <rowConstraints>
           <RowConstraints maxHeight="143.5655059814453" minHeight="10.0" prefHeight="41.58620834350586" vgrow="SOMETIMES" />
           <RowConstraints maxHeight="256.2156524658203" minHeight="10.0" prefHeight="188.41379165649414" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="286.3402404785156" minHeight="10.0" prefHeight="286.3402404785156" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="286.3402404785156" minHeight="10.0" prefHeight="41.597503662109375" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="312.711669921875" minHeight="10.0" prefHeight="292.4024963378906" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <HBox alignment="CENTER">
                <children>
-                  <Label text="Study Queue">
+                  <Label fx:id="titleLabel" text="Study Queue">
                      <font>
                         <Font size="30.0" />
                      </font>
@@ -44,13 +45,84 @@
                      <children>
                         <HBox />
                         <HBox GridPane.columnIndex="2" />
-                        <HBox GridPane.rowIndex="1" />
-                        <HBox GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <HBox GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <HBox alignment="CENTER" GridPane.rowIndex="1">
+                           <children>
+                              <Label fx:id="fromLabel" text="fromField">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <children>
+                              <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../res/Arrow.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <children>
+                              <Label fx:id="toLabel" text="toField">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
                      </children>
                   </GridPane>
                </children>
             </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+               <children>
+                  <Button mnemonicParsing="false" text="Flip">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <VBox fx:id="guessBox" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="3">
+               <children>
+                  <Label text="Rate how well you think you did!">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="1" textFill="RED">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="2" textFill="#ff7900">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="3" textFill="#f2ff00">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="4" textFill="#90ff00">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="5" textFill="#00ff15">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
          </children>
       </GridPane>
    </center>

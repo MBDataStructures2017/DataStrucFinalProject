@@ -7,18 +7,56 @@ package Logic;
  * @author Ben Kizaric and Megan Choy
  *
  */
-public class LearningObjective {
+public class LearningObjective implements Comparable{
 	
 	private String filePath;
 	
 	private double knowledgeIndex;
-	private String fromFeild;
-	private String toFeild;
+	private String fromField;
+	private String toField;
 	private FlexCard card;
 	
-	public LearningObjective(FlexCard card, String toFrom, int kI) {
-		this.card = card;
-		this.knowledgeIndex = kI;
+	public LearningObjective(String fromField, String toField, double knowledgeIndex) {
+		this.toField = toField;
+		this.fromField = fromField;
+		this.knowledgeIndex = knowledgeIndex;
 	}
+
+	public double getKnowledgeIndex() {
+		return knowledgeIndex;
+	}
+
+	public void setKnowledgeIndex(double knowledgeIndex) {
+		this.knowledgeIndex = knowledgeIndex;
+	}
+
+	public String getFromField() {
+		return fromField;
+	}
+
+	public void setFromField(String fromField) {
+		this.fromField = fromField;
+	}
+
+	public String getToField() {
+		return toField;
+	}
+
+	public void setToField(String toField) {
+		this.toField = toField;
+	}
+
+	public int compareTo(Object other) {
+		// TODO Auto-generated method stub
+		return (int) (knowledgeIndex - ((LearningObjective) other).getKnowledgeIndex());
+	}
+	
+	public String toString() {
+		return fromField +" --> " + toField;
+	}
+
+
+	
+	
 	
 }

@@ -4,9 +4,12 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.PriorityQueue;
 import java.util.Scanner;
 
+import Logic.LearningObjective;
 import Logic.Subject;
+import flexCards.Study.StudyViewController;
 import flexCards.StudySet.StudySetViewController;
 import flexCards.Subject.SubjectViewController;
 import flexCards.view.MainMenuController;
@@ -111,6 +114,19 @@ public class Main extends Application {
 		controller.setTitle(studySetName);//Passing Data into the controller!
 		controller.initStudySet(subject, studySetName);//Initializes StudySet object in StudySet View
 		mainLayout.setCenter(subjectView);
+	}
+	
+	public static void showStudyView(String queueName, PriorityQueue<LearningObjective> queueContents) throws IOException {
+		System.out.println("ShowStudySetView()");
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(Main.class.getResource("Study/StudyView.fxml"));//Path to fxml doc
+		BorderPane subjectView = loader.load();
+		StudyViewController controller = loader.getController();//Passing Data into the controller
+		controller.setTitle(queueName);//Passing Data into the controller!
+		controller.setLearningObjectives(queueContents);//Initializes StudySet object in StudySet View
+		mainLayout.setCenter(subjectView);
+		
+		
 	}
 	
 

@@ -33,6 +33,12 @@ public class StudySetViewController implements Initializable{
 	}
 	
 	@FXML
+	public void printCardData() {
+		int cardIndex = cards.getSelectionModel().getSelectedIndex();
+		studySet.getCards().get(cardIndex).printCard();
+	}
+	
+	@FXML
 	public void setTitle(String inputTitle) {
 		title.setText(inputTitle);
 	}

@@ -35,7 +35,8 @@
                         <Font size="21.0" />
                      </font>
                   </Label>
-                  <ListView fx:id="cards" prefHeight="470.0" prefWidth="345.0" />
+                  <ListView fx:id="cards" prefHeight="427.0" prefWidth="345.0" />
+                  <Button mnemonicParsing="false" onAction="#printCardData" text="Print Card Details" />
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="30.0" GridPane.columnIndex="1">
