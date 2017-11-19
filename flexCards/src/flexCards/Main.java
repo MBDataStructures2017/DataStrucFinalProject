@@ -1,7 +1,9 @@
 package flexCards;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.PriorityQueue;
@@ -9,6 +11,7 @@ import java.util.Scanner;
 
 import Logic.LearningObjective;
 import Logic.Subject;
+
 import flexCards.Study.StudyViewController;
 import flexCards.StudySet.StudySetViewController;
 import flexCards.Subject.SubjectViewController;
@@ -53,6 +56,13 @@ public class Main extends Application {
 		//Return arraylist of strings which now contains all lines of the target file.
 		return convertedFile;
 	}
+	
+	public static void append(String s, File f) throws IOException {
+		s = "\n" + s;
+		FileWriter fw = new FileWriter(f, true);
+		fw.write(s);
+		fw.close();
+	}
 	///////////////End of Logic Methods////////////////
 	
 	
@@ -60,25 +70,27 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) throws IOException {
 		this.primaryStage = primaryStage;
-		this.primaryStage.setTitle("Employee App");
+		this.primaryStage.setTitle("flexCards");
+		
+		
 		
 		//Load the txt file with all subject names.
-		ArrayList<String> subjectNames = txtToStringArrayList("Data/Subjects.txt");
+		//ArrayList<String> subjectNames = txtToStringArrayList("Data/Subjects.txt");
 		System.out.println("Lets Hope this gets on gitHub!");
 		System.out.println("Another push from my desktop!");
 		System.out.println("Macbook commit");
 		
 		showMainView();
-		showMainItems(subjectNames);//Passes in the names of all subjects for the user to potentially select.
+		showMainItems();//Passes in the names of all subjects for the user to potentially select.
 	}
 	
 	//Sets up main menu UI
-	public static void showMainItems(ArrayList<String> subjectNames) throws IOException {
+	public static void showMainItems() throws IOException {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(Main.class.getResource("view/MainMenu.fxml"));//Path to fxml doc
 		BorderPane mainItems = loader.load();
 		MainMenuController controller = loader.getController();
-		controller.addSubjectsText(subjectNames);
+		controller.addSubjectsText();
 		mainLayout.setCenter(mainItems);
 	}
 	
@@ -90,6 +102,22 @@ public class Main extends Application {
 		Scene scene = new Scene(mainLayout);
 		primaryStage.setScene(scene);
 		primaryStage.show();
+	}
+	
+	public static void showAddSubject() throws IOException {
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(Main.class.getResource("AddSubject/AddSubjectView.fxml"));
+		BorderPane addNewEmployee = loader.load();
+		
+		Stage addDialogueStage = new Stage();
+		addDialogueStage.setTitle("Add New Subject");
+		addDialogueStage.initModality(Modality.WINDOW_MODAL);
+		addDialogueStage.initOwner(primaryStage);
+		
+		Scene scene = new Scene(addNewEmployee);
+		
+		addDialogueStage.setScene(scene);
+		addDialogueStage.showAndWait();
 	}
 	
 	//Sets up Subject View

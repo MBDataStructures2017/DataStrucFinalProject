@@ -24,7 +24,13 @@ public class StudyViewController implements Initializable{
 	private Label fromLabel;
 	
 	@FXML
+	private Label fromLabelName;
+	
+	@FXML
 	private Label toLabel;
+	
+	@FXML
+	private Label toLabelName;
 	
 	@FXML
 	private VBox guessBox;
@@ -36,6 +42,9 @@ public class StudyViewController implements Initializable{
 	
 	public void setLearningObjectives(PriorityQueue<LearningObjective> queue) {
 		LOQueue = queue;
+		fromLabel.setText(queue.peek().getFromField());
+		fromLabelName.setText(queue.peek().getFromFieldName());
+		toLabelName.setText(queue.peek().getToFieldName());
 	}
 	
 	@FXML
@@ -44,7 +53,9 @@ public class StudyViewController implements Initializable{
 		justRemoved.setKnowledgeIndex(justRemoved.getKnowledgeIndex() -10);//Oversimplification of Algorithm
 		LOQueue.add(justRemoved);
 		fromLabel.setText(LOQueue.peek().getFromField());
-		fromLabel.setText(LOQueue.peek().getToField());
+		fromLabelName.setText(LOQueue.peek().getFromFieldName());
+		toLabelName.setText(LOQueue.peek().getToFieldName());
+		//fromLabel.setText(LOQueue.peek().getToField());
 		guessBox.setVisible(false);
 		toLabel.setVisible(false);
 		
@@ -57,7 +68,9 @@ public class StudyViewController implements Initializable{
 		justRemoved.setKnowledgeIndex(justRemoved.getKnowledgeIndex() -3);//Oversimplification of Algorithm
 		LOQueue.add(justRemoved);
 		fromLabel.setText(LOQueue.peek().getFromField());
-		fromLabel.setText(LOQueue.peek().getToField());
+		fromLabelName.setText(LOQueue.peek().getFromFieldName());
+		toLabelName.setText(LOQueue.peek().getToFieldName());
+		//fromLabel.setText(LOQueue.peek().getToField());
 		guessBox.setVisible(false);
 		toLabel.setVisible(false);
 	}
@@ -68,7 +81,9 @@ public class StudyViewController implements Initializable{
 		justRemoved.setKnowledgeIndex(justRemoved.getKnowledgeIndex());//Oversimplification of Algorithm
 		LOQueue.add(justRemoved);
 		fromLabel.setText(LOQueue.peek().getFromField());
-		fromLabel.setText(LOQueue.peek().getToField());
+		fromLabelName.setText(LOQueue.peek().getFromFieldName());
+		toLabelName.setText(LOQueue.peek().getToFieldName());
+		//fromLabel.setText(LOQueue.peek().getToField());
 		guessBox.setVisible(false);
 		toLabel.setVisible(false);
 	}
@@ -79,7 +94,9 @@ public class StudyViewController implements Initializable{
 		justRemoved.setKnowledgeIndex(justRemoved.getKnowledgeIndex()+3);//Oversimplification of Algorithm
 		LOQueue.add(justRemoved);
 		fromLabel.setText(LOQueue.peek().getFromField());
-		fromLabel.setText(LOQueue.peek().getToField());
+		fromLabelName.setText(LOQueue.peek().getFromFieldName());
+		toLabelName.setText(LOQueue.peek().getToFieldName());
+		//fromLabel.setText(LOQueue.peek().getToField());
 		guessBox.setVisible(false);
 		toLabel.setVisible(false);
 	}
@@ -90,21 +107,24 @@ public class StudyViewController implements Initializable{
 		justRemoved.setKnowledgeIndex(justRemoved.getKnowledgeIndex()+10);//Oversimplification of Algorithm
 		LOQueue.add(justRemoved);
 		fromLabel.setText(LOQueue.peek().getFromField());
-		fromLabel.setText(LOQueue.peek().getToField());
+		fromLabelName.setText(LOQueue.peek().getFromFieldName());
+		toLabelName.setText(LOQueue.peek().getToFieldName());
+		//toLabel.setText(LOQueue.peek().getToField());
 		guessBox.setVisible(false);
 		toLabel.setVisible(false);
 	}
 	
 	@FXML
 	public void flip() {
+		toLabel.setText(LOQueue.peek().getToField());
 		toLabel.setVisible(true);
 		guessBox.setVisible(true);
 	}
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		fromLabel.setText(LOQueue.peek().getFromField());
-		fromLabel.setText(LOQueue.peek().getToField());
+		//fromLabel.setText(LOQueue.peek().getFromField());
+		//fromLabel.setText(LOQueue.peek().getToField());
 		guessBox.setVisible(false);
 		toLabel.setVisible(false);
 		//currentLO = LOQueue.peek();

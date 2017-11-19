@@ -2,6 +2,9 @@ package flexCards.view;
 
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.LinkOption;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -16,6 +19,8 @@ public class MainMenuController implements Initializable{
 	
 	private Main main;
 	
+	//ArrayList<String> subjects = new ArrayList<String>();
+	
 	
 	@FXML
 	private ChoiceBox subjectSelector;
@@ -26,7 +31,10 @@ public class MainMenuController implements Initializable{
 	}
 	
 	//Initializes the subjectSelector TextBox with all subjects from Subjects.txt
-	public void addSubjectsText(ArrayList<String> subjects) {
+	public void addSubjectsText() {
+		System.out.println("GGG");
+		ArrayList<String> subjects = Main.txtToStringArrayList("Data/Subjects.txt");
+		subjectSelector.getItems().clear();
 		for(int i = 0; i < subjects.size(); i++) {
 			subjectSelector.getItems().add(subjects.get(i));
 		}
@@ -35,8 +43,16 @@ public class MainMenuController implements Initializable{
 	
 	
 	public void goSubject() throws IOException {
-		System.out.println("Clicked OK");
 		//Calls showSubjectView with currently Selected item from subjectSelector
-		main.showSubjectView(subjectSelector.getSelectionModel().getSelectedItem().toString());
+		if (Files.isDirectory(Paths.get("Data/" + subjectSelector.getSelectionModel().getSelectedItem().toString()))) {
+			main.showSubjectView(subjectSelector.getSelectionModel().getSelectedItem().toString()); 
+		} 
+		//main.showSubjectView(subjectSelector.getSelectionModel().getSelectedItem().toString());
+	}
+	
+	
+	@FXML
+	public void goNewSubject() throws IOException {
+		main.showAddSubject();
 	}
 }

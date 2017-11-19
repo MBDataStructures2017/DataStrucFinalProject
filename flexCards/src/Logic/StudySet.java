@@ -19,6 +19,8 @@ public class StudySet {
 	public StudySet(String name, String filePath, String dataLine) {
 		this.name = name;
 		
+		LOs = new PriorityQueue<LearningObjective>();
+		
 		this.filePath = filePath + name + "/";
 		tempCardTitles = new ArrayList<String>();
 		cards = new ArrayList<FlexCard>();
@@ -27,7 +29,13 @@ public class StudySet {
 			String tempCardTitle = tempCardLines.get(i).substring(tempCardLines.get(i).indexOf("<f>")+3, tempCardLines.get(i).indexOf("</f>"));
 			tempCardTitle = tempCardTitle.substring(0, tempCardTitle.indexOf("*"));
 			tempCardTitles.add(tempCardTitle);
-			cards.add( new FlexCard(dataLine, tempCardLines.get(i)) );
+			cards.add( new FlexCard(dataLine, tempCardLines.get(i), this));
+		}
+		
+		for(int l = 0; l < cards.size(); l++) {
+			for(int g = 0; g <cards.get(l).getLearningObjectives().size(); g++) {
+				LOs.add(cards.get(l).getLearningObjectives().get(g));
+			}
 		}
 	}
 	
@@ -40,5 +48,9 @@ public class StudySet {
 	
 	public ArrayList<FlexCard> getCards() {
 		return cards;
+	}
+	
+	public PriorityQueue<LearningObjective> getLOQueue(){
+		return LOs;
 	}
 }

@@ -27,6 +27,8 @@ public class StudySetViewController implements Initializable{
 	
 	
 	
+	
+	
 	@FXML
 	public void printSelection() {
 		System.out.println(cards.getSelectionModel().getSelectedItem().toString());
@@ -41,6 +43,11 @@ public class StudySetViewController implements Initializable{
 	@FXML
 	public void setTitle(String inputTitle) {
 		title.setText(inputTitle);
+	}
+	
+	@FXML
+	public void startStudy() throws IOException {
+		main.showStudyView(title.getText(), studySet.getLOQueue());
 	}
 	
 	public void initStudySet(Subject s, String studySetName) {

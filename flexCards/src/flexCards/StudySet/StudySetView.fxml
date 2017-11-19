@@ -41,7 +41,7 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="30.0" GridPane.columnIndex="1">
                <children>
-                  <Button mnemonicParsing="false" text="Button">
+                  <Button mnemonicParsing="false" onAction="#startStudy" text="Start Study">
                      <font>
                         <Font size="30.0" />
                      </font>

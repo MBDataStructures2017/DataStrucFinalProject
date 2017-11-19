@@ -13,13 +13,27 @@ public class LearningObjective implements Comparable{
 	
 	private double knowledgeIndex;
 	private String fromField;
+	private int fromFieldIndex;
 	private String toField;
-	private FlexCard card;
+	private int toFieldIndex;
+	private FlexCard parentCard;
+	private int fieldComboIndex;
 	
-	public LearningObjective(String fromField, String toField, double knowledgeIndex) {
-		this.toField = toField;
+	public LearningObjective(String fromField, int fromFieldIndex, String toField, int toFieldIndex, double knowledgeIndex, FlexCard parentCard) {
 		this.fromField = fromField;
+		this.fromFieldIndex = fromFieldIndex;
+		this.toField = toField;
+		this.toFieldIndex = toFieldIndex;
 		this.knowledgeIndex = knowledgeIndex;
+		this.parentCard = parentCard;
+	}
+	
+	public String getFromFieldName() {
+		return parentCard.getFieldNames()[fromFieldIndex];
+	}
+	
+	public String getToFieldName() {
+		return parentCard.getFieldNames()[toFieldIndex];
 	}
 
 	public double getKnowledgeIndex() {
@@ -52,7 +66,7 @@ public class LearningObjective implements Comparable{
 	}
 	
 	public String toString() {
-		return fromField +" --> " + toField;
+		return "("+getFromFieldName()+")"+ fromField +" --> " + "("+getToFieldName()+")"+toField;
 	}
 
 
