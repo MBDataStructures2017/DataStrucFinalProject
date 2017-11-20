@@ -48,7 +48,7 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
                <children>
-                  <Button mnemonicParsing="false" text="Start Main Queue" textFill="#ff7900">
+                  <Button mnemonicParsing="false" text="Start Main Queue (Not Implemented)" textFill="#ff7900">
                      <font>
                         <Font size="26.0" />
                      </font>

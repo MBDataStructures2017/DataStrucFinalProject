@@ -49,12 +49,10 @@ public class StudySetViewController implements Initializable{
 	
 	@FXML
 	public void startStudy() throws IOException {
-		main.showStudyView(title.getText(), studySet.getLOQueue());
+		main.showStudyView(title.getText(), studySet.getLOQueue(), studySet);
 	}
 	
-	@FXML void goNewStudySet(){
-		//main.showAddStudySet(pathToSubject);
-	}
+	
 	
 	public void initStudySet(Subject s, String studySetName) {
 		//Loops through Current Subject, finds the target studySet

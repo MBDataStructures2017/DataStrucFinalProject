@@ -1,10 +1,13 @@
 package flexCards.Study;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.PriorityQueue;
 import java.util.ResourceBundle;
 
 import Logic.LearningObjective;
+import Logic.StudySet;
+import flexCards.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -15,6 +18,7 @@ public class StudyViewController implements Initializable{
 	private PriorityQueue<LearningObjective> LOQueue;
 	private boolean hasFlipped;
 	private LearningObjective currentLO;
+	private StudySet studySet;
 	
 	
 	@FXML
@@ -119,6 +123,15 @@ public class StudyViewController implements Initializable{
 		toLabel.setText(LOQueue.peek().getToField());
 		toLabel.setVisible(true);
 		guessBox.setVisible(true);
+	}
+	
+	public void setStudySet(StudySet studySet) {
+		this.studySet = studySet;
+	}
+	
+	@FXML
+	public void goBack() throws IOException {
+		Main.showStudySetView(studySet.getParentSubject(), studySet.getName());
 	}
 
 	@Override

@@ -22,11 +22,11 @@ public class FlexCard {
 		
 		
 		String[] fieldArr = line.substring(line.indexOf("<f>")+3, line.indexOf("</f>")).split("\\*");
-		System.out.println("B:" + fieldArr.length);
+
 		
 		
 		String[] fieldComboArr = parentSet.getFieldCombos();
-		System.out.println("A:" + fieldComboArr.length);
+
 		//this.fieldCombos = fieldComboArr;
 		
 		

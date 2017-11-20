@@ -78,9 +78,6 @@ public class Main extends Application {
 		
 		//Load the txt file with all subject names.
 		//ArrayList<String> subjectNames = txtToStringArrayList("Data/Subjects.txt");
-		System.out.println("Lets Hope this gets on gitHub!");
-		System.out.println("Another push from my desktop!");
-		System.out.println("Macbook commit");
 		
 		showMainView();
 		showMainItems();//Passes in the names of all subjects for the user to potentially select.
@@ -188,12 +185,13 @@ public class Main extends Application {
 		mainLayout.setCenter(subjectView);
 	}
 	
-	public static void showStudyView(String queueName, PriorityQueue<LearningObjective> queueContents) throws IOException {
+	public static void showStudyView(String queueName, PriorityQueue<LearningObjective> queueContents, StudySet parentSet) throws IOException {
 		System.out.println("ShowStudySetView()");
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(Main.class.getResource("Study/StudyView.fxml"));//Path to fxml doc
 		BorderPane subjectView = loader.load();
 		StudyViewController controller = loader.getController();//Passing Data into the controller
+		controller.setStudySet(parentSet);
 		controller.setTitle(queueName);//Passing Data into the controller!
 		controller.setLearningObjectives(queueContents);//Initializes StudySet object in StudySet View
 		mainLayout.setCenter(subjectView);
