@@ -20,11 +20,13 @@ public class FlexCard {
 		this.parentSet = parentSet;
 		this.fieldNames = studySetLine.substring(studySetLine.indexOf("<f>")+3, studySetLine.indexOf("</f>")).split("\\*");
 		
-		String allFields = line.substring(line.indexOf("<f>")+3, line.indexOf("</f>"));
-		String[] fieldArr = allFields.split("\\*");//These lines are bitches;
 		
-		String allFieldCombos = studySetLine.substring(studySetLine.indexOf("<KI>")+4, studySetLine.indexOf("</KI>"));
-		String[] fieldComboArr = allFieldCombos.split("\\*");
+		String[] fieldArr = line.substring(line.indexOf("<f>")+3, line.indexOf("</f>")).split("\\*");
+		System.out.println("B:" + fieldArr.length);
+		
+		
+		String[] fieldComboArr = parentSet.getFieldCombos();
+		System.out.println("A:" + fieldComboArr.length);
 		//this.fieldCombos = fieldComboArr;
 		
 		
@@ -32,7 +34,11 @@ public class FlexCard {
 		String[] allFieldComboKIStrArr = allFieldComboKI.split("\\*");
 		double[] fieldComboKnowledgeIndexes = new double[fieldComboArr.length];
 		
+		
+		
+		System.out.println(fieldArr[0]+"__"+fieldComboKnowledgeIndexes.length +"____"+allFieldComboKIStrArr.length);
 		for(int k = 1; k < allFieldComboKIStrArr.length; k++) {
+			//System.out.println(fieldArr[0] +"_"+fieldComboKnowledgeIndexes[k] + "_"/*allFieldComboKIStrArr[k]*/);
 			fieldComboKnowledgeIndexes[k] = Double.parseDouble(allFieldComboKIStrArr[k]);
 		}
 		

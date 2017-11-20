@@ -30,14 +30,20 @@
             <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
                <children>
                   <ListView fx:id="studySets" prefHeight="467.0" prefWidth="369.0" />
-                  <Button mnemonicParsing="false" onAction="#goStudySet" text="Select This Study Set">
-                     <font>
-                        <Font size="19.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets top="14.0" />
-                     </VBox.margin>
-                  </Button>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#goStudySet" text="Select This Study Set">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#refreshSubjects" text="Refresh">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
@@ -50,7 +56,7 @@
                         <Insets bottom="60.0" />
                      </VBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" text="Add New Study Set" textFill="#01e805">
+                  <Button mnemonicParsing="false" onAction="#goAddStudySet" text="Add New Study Set" textFill="#01e805">
                      <font>
                         <Font size="26.0" />
                      </font>

@@ -19,13 +19,24 @@ public class Subject {
 		ArrayList<String> studySetLines = Main.txtToStringArrayList(filePathToStudySetsFile);
 		studySets = new ArrayList<StudySet>();
 		
-		for(int i = 0; i < studySetLines.size(); i++) {
+		for(int i = 1; i < studySetLines.size(); i++) {
 			String tempStudySetName = studySetLines.get(i).substring(0, studySetLines.get(i).indexOf("*"));
-			studySets.add(new StudySet(tempStudySetName, filePath+tempStudySetName, studySetLines.get(i)));
+			studySets.add(new StudySet(tempStudySetName, filePath+tempStudySetName, studySetLines.get(i), this));
 		}
 	}
 	
+	public String getFilePath() {
+		return filePath;
+	}
+
+	public String getFilePathToStudySetsFile() {
+		return filePathToStudySetsFile;
+	}
+
 	public ArrayList<StudySet> getStudySets(){
 		return studySets;
+	}
+	public String getName() {
+		return name;
 	}
 }

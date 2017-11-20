@@ -1,0 +1,3 @@
+This Line Intentionally Blank
+Animals*0*0*0*<f>Chinese*Pinyin*English*</f><KI>*F1->F2*F1->F3*F2->F1*F2->F3*F3->F1*F3->F2*</KI>
+Land Marks*0*0*0*<f>Chinese*Pinyin*English*</f><KI>*F1->F2*F1->F3*F2->F1*F2->F3*F3->F1*F3->F2*</KI>

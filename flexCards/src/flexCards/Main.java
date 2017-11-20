@@ -10,8 +10,10 @@ import java.util.PriorityQueue;
 import java.util.Scanner;
 
 import Logic.LearningObjective;
+import Logic.StudySet;
 import Logic.Subject;
-
+import flexCards.AddFlexCard.AddFlexCardViewController;
+import flexCards.AddStudySet.AddStudySetViewController;
 import flexCards.Study.StudyViewController;
 import flexCards.StudySet.StudySetViewController;
 import flexCards.Subject.SubjectViewController;
@@ -107,14 +109,55 @@ public class Main extends Application {
 	public static void showAddSubject() throws IOException {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(Main.class.getResource("AddSubject/AddSubjectView.fxml"));
-		BorderPane addNewEmployee = loader.load();
+		BorderPane addSubject = loader.load();
 		
 		Stage addDialogueStage = new Stage();
 		addDialogueStage.setTitle("Add New Subject");
 		addDialogueStage.initModality(Modality.WINDOW_MODAL);
 		addDialogueStage.initOwner(primaryStage);
 		
-		Scene scene = new Scene(addNewEmployee);
+		Scene scene = new Scene(addSubject);
+		
+		addDialogueStage.setScene(scene);
+		addDialogueStage.showAndWait();
+	}
+	
+	public static void showAddStudySet(Subject parentSubject) throws IOException {
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(Main.class.getResource("AddStudySet/AddStudySetView.fxml"));
+		BorderPane addStudySet = loader.load();
+		
+		AddStudySetViewController controller = loader.getController();
+		controller.setSubject(parentSubject);
+		
+		
+		Stage addDialogueStage = new Stage();
+		addDialogueStage.setTitle("Add New Study Set");
+		addDialogueStage.initModality(Modality.WINDOW_MODAL);
+		addDialogueStage.initOwner(primaryStage);
+		
+		Scene scene = new Scene(addStudySet);
+		
+		addDialogueStage.setScene(scene);
+		addDialogueStage.showAndWait();
+	}
+	
+	public static void showAddFlexCard(StudySet parentStudySet) throws IOException {
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(Main.class.getResource("AddFlexCard/AddFlexCardView.fxml"));
+		BorderPane addFlexCard = loader.load();
+		
+		AddFlexCardViewController controller = loader.getController();
+		controller.setStudySet(parentStudySet);
+		controller.initializeFeildLabels();
+		
+		
+		Stage addDialogueStage = new Stage();
+		addDialogueStage.setTitle("Add New flexCard");
+		addDialogueStage.initModality(Modality.WINDOW_MODAL);
+		addDialogueStage.initOwner(primaryStage);
+		
+		Scene scene = new Scene(addFlexCard);
 		
 		addDialogueStage.setScene(scene);
 		addDialogueStage.showAndWait();
@@ -127,6 +170,7 @@ public class Main extends Application {
 		loader.setLocation(Main.class.getResource("Subject/SubjectView.fxml"));//Path to fxml doc
 		BorderPane subjectView = loader.load();
 		SubjectViewController controller = loader.getController();//Passing Data into the controller
+		
 		controller.setTitle(subjectName);//Passing Data into the controller!
 		controller.subjectInit(subjectName);//Initializes the Subject object within SubjectView
 		mainLayout.setCenter(subjectView);

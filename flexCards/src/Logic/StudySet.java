@@ -8,16 +8,23 @@ import flexCards.Main;
 public class StudySet {
 	private String filePath;
 	
+	private Subject parentSubject;
+	
 	private PriorityQueue<LearningObjective> LOs;
 	
 	private ArrayList<FlexCard> cards;
 	
 	private String name;
 	
+	private String dataLine;
+	
 	private ArrayList<String> tempCardTitles;// This is just for the Nov 17th deadline.
 	
-	public StudySet(String name, String filePath, String dataLine) {
+	public StudySet(String name, String filePath, String dataLine, Subject parentSubject) {
 		this.name = name;
+		this.parentSubject = parentSubject;
+		this.dataLine = dataLine;
+		this.filePath = filePath;
 		
 		LOs = new PriorityQueue<LearningObjective>();
 		
@@ -46,8 +53,30 @@ public class StudySet {
 		return name;
 	}
 	
+	public String[] getFeildNames() {
+		return dataLine.substring(dataLine.indexOf("<f>")+3, dataLine.indexOf("</f>")).split("\\*");
+	}
+	
+	public String[] getFieldCombos() {
+		return dataLine.substring(dataLine.indexOf("<KI>")+4, dataLine.indexOf("</KI>")).split("\\*");
+	}
+	
+	public String getFilePath() {
+		return parentSubject.getFilePath() + name;
+	}
+	
+	
+	
 	public ArrayList<FlexCard> getCards() {
 		return cards;
+	}
+	
+	public Subject getParentSubject() {
+		return parentSubject;
+	}
+	
+	public String getDataLine() {
+		return dataLine;
 	}
 	
 	public PriorityQueue<LearningObjective> getLOQueue(){

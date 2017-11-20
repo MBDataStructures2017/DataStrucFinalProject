@@ -44,6 +44,10 @@ public class SubjectViewController implements Initializable{
 		subjectTitle.setText(subjectName);
 	}
 	
+	@FXML void goAddStudySet() throws IOException {
+		main.showAddStudySet(subject);
+	}
+	
 	//Initializes and populates subject (population is still as WIP)
 	//Displays all of subjects studySets in the studySets ListView
 	public void subjectInit(String subjectName) {
@@ -52,7 +56,13 @@ public class SubjectViewController implements Initializable{
 			studySets.getItems().add(subject.getStudySets().get(i).getName());
 		}
 	}
-
+	
+	
+	@FXML
+	public void refreshSubjects() {
+		studySets.getItems().clear();
+		subjectInit(subject.getName());
+	}
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {

@@ -29,6 +29,8 @@ public class StudySetViewController implements Initializable{
 	
 	
 	
+	
+	
 	@FXML
 	public void printSelection() {
 		System.out.println(cards.getSelectionModel().getSelectedItem().toString());
@@ -50,6 +52,10 @@ public class StudySetViewController implements Initializable{
 		main.showStudyView(title.getText(), studySet.getLOQueue());
 	}
 	
+	@FXML void goNewStudySet(){
+		//main.showAddStudySet(pathToSubject);
+	}
+	
 	public void initStudySet(Subject s, String studySetName) {
 		//Loops through Current Subject, finds the target studySet
 		for(int i = 0; i < s.getStudySets().size(); i++) {
@@ -58,6 +64,24 @@ public class StudySetViewController implements Initializable{
 			}
 		}
 		//Adds all cards from the studyset to the cards ListView
+		for(int j = 0; j < studySet.getTempCardTitles().size(); j++) {
+			cards.getItems().add(studySet.getTempCardTitles().get(j));
+		}
+		
+		System.out.println("Subject Path:" + studySet.getParentSubject().getFilePathToStudySetsFile());
+	}
+	
+	@FXML
+	public void goNewFlexCard() throws IOException {
+		main.showAddFlexCard(studySet);
+	}
+	
+	@FXML
+	public void refreshCards() {
+		System.out.println("refreshCards()");
+		cards.getItems().clear();
+		studySet = new StudySet(studySet.getName(), studySet.getFilePath(), studySet.getDataLine(), studySet.getParentSubject());
+		//initStudySet(studySet.getParentSubject(), studySet.getName());
 		for(int j = 0; j < studySet.getTempCardTitles().size(); j++) {
 			cards.getItems().add(studySet.getTempCardTitles().get(j));
 		}

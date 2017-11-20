@@ -36,7 +36,7 @@
                      </font>
                   </Label>
                   <ListView fx:id="cards" prefHeight="427.0" prefWidth="345.0" />
-                  <Button mnemonicParsing="false" onAction="#printCardData" text="Print Card Details" />
+                  <Button mnemonicParsing="false" onAction="#refreshCards" text="Refresh" />
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="30.0" GridPane.columnIndex="1">
@@ -46,7 +46,7 @@
                         <Font size="30.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" text="Button">
+                  <Button mnemonicParsing="false" onAction="#goNewFlexCard" text="New FlexCard">
                      <font>
                         <Font size="30.0" />
                      </font>
