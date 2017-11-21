@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import flexCards.Main;
+import flexCards.view.MainMenuController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -15,6 +16,8 @@ import javafx.stage.Stage;
 public class AddSubjectViewController {
 	
 	private Main main;
+	
+	private MainMenuController parentController; 
 	
 	@FXML
 	private TextField inputLine;
@@ -39,7 +42,13 @@ public class AddSubjectViewController {
 				e.printStackTrace();
 			}
 		}
+		parentController.addSubjectsText();
 		close();
+	}
+	
+	@FXML
+	public void setParentController( MainMenuController controller) {
+		this.parentController = controller;
 	}
 	
 	@FXML

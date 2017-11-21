@@ -59,6 +59,10 @@ public class LearningObjective implements Comparable{
 	public void setToField(String toField) {
 		this.toField = toField;
 	}
+	
+	public FlexCard getParentFlexCard() {
+		return this.parentCard;
+	}
 
 	public int compareTo(Object other) {
 		// TODO Auto-generated method stub

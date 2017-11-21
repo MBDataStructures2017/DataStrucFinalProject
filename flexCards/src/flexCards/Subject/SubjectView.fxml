@@ -8,12 +8,6 @@
 <?import javafx.scene.layout.BorderPane?>
 
 <BorderPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="flexCards.Subject.SubjectViewController">
-   <top>
-      <Label fx:id="subjectTitle" text="Subject View" BorderPane.alignment="BOTTOM_CENTER">
-         <font>
-            <Font size="25.0" />
-         </font></Label>
-   </top>
    <center>
       <GridPane prefHeight="470.0" prefWidth="900.0" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -37,7 +31,7 @@
                               <Font size="19.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#refreshSubjects" text="Refresh">
+                        <Button mnemonicParsing="false" onAction="#refreshStudySets" text="Refresh">
                            <font>
                               <Font size="19.0" />
                            </font>
@@ -48,7 +42,7 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
                <children>
-                  <Button mnemonicParsing="false" text="Start Main Queue (Not Implemented)" textFill="#ff7900">
+                  <Button mnemonicParsing="false" onAction="#startStudy" text="Start Main Queue" textFill="#ff7900">
                      <font>
                         <Font size="26.0" />
                      </font>
@@ -67,4 +61,40 @@
          </children>
       </GridPane>
    </center>
+   <top>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="191.95123291015625" minWidth="10.0" prefWidth="96.43708038330078" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="755.8292007446289" minWidth="10.0" prefWidth="708.5629196166992" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="293.3382568359375" minWidth="9.54669189453125" prefWidth="74.0975341796875" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#goBack" prefHeight="35.0" prefWidth="76.0" text="Back" textFill="RED">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="726.0" GridPane.columnIndex="1">
+               <children>
+                  <Label fx:id="subjectTitle" text="Subject Name">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" />
+         </children>
+      </GridPane>
+   </top>
+   <padding>
+      <Insets left="10.0" right="10.0" top="10.0" />
+   </padding>
 </BorderPane>

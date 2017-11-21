@@ -45,7 +45,7 @@ public class SubjectViewController implements Initializable{
 	}
 	
 	@FXML void goAddStudySet() throws IOException {
-		main.showAddStudySet(subject);
+		main.showAddStudySet(subject, this);
 	}
 	
 	//Initializes and populates subject (population is still as WIP)
@@ -57,9 +57,18 @@ public class SubjectViewController implements Initializable{
 		}
 	}
 	
+	@FXML
+	public void startStudy() throws IOException {
+		main.showMainStudyView(subjectTitle.getText(), subject.getMainQueue(), subject);
+	}
 	
 	@FXML
-	public void refreshSubjects() {
+	public void goBack() throws IOException {
+		main.showMainItems();
+	}
+	
+	@FXML
+	public void refreshStudySets() {
 		studySets.getItems().clear();
 		subjectInit(subject.getName());
 	}

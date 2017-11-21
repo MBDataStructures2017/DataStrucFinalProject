@@ -1,6 +1,7 @@
 package Logic;
 
 import java.util.ArrayList;
+import java.util.PriorityQueue;
 
 import flexCards.Main;
 
@@ -27,6 +28,18 @@ public class Subject {
 	
 	public String getFilePath() {
 		return filePath;
+	}
+	
+	public PriorityQueue<LearningObjective> getMainQueue(){
+		PriorityQueue<LearningObjective> queue = new PriorityQueue<LearningObjective>();
+		for(StudySet set : studySets) {
+			for(int i = 0; i < set.getCards().size(); i++) {
+				for(int k = 0; k < set.getCards().get(i).getLearningObjectives().size(); k++) {
+					queue.add(set.getCards().get(i).getLearningObjectives().get(k));
+				}
+			}
+		}
+		return queue;
 	}
 
 	public String getFilePathToStudySetsFile() {

@@ -14,6 +14,8 @@ import Logic.StudySet;
 import Logic.Subject;
 import flexCards.AddFlexCard.AddFlexCardViewController;
 import flexCards.AddStudySet.AddStudySetViewController;
+import flexCards.AddSubject.AddSubjectViewController;
+import flexCards.Study.MainStudyViewController;
 import flexCards.Study.StudyViewController;
 import flexCards.StudySet.StudySetViewController;
 import flexCards.Subject.SubjectViewController;
@@ -103,10 +105,15 @@ public class Main extends Application {
 		primaryStage.show();
 	}
 	
-	public static void showAddSubject() throws IOException {
+	public static void showAddSubject(MainMenuController parentController) throws IOException {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(Main.class.getResource("AddSubject/AddSubjectView.fxml"));
 		BorderPane addSubject = loader.load();
+		
+		AddSubjectViewController controller = loader.getController();
+		controller.setParentController(parentController);
+		
+		
 		
 		Stage addDialogueStage = new Stage();
 		addDialogueStage.setTitle("Add New Subject");
@@ -119,13 +126,14 @@ public class Main extends Application {
 		addDialogueStage.showAndWait();
 	}
 	
-	public static void showAddStudySet(Subject parentSubject) throws IOException {
+	public static void showAddStudySet(Subject parentSubject, SubjectViewController parentController) throws IOException {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(Main.class.getResource("AddStudySet/AddStudySetView.fxml"));
 		BorderPane addStudySet = loader.load();
 		
 		AddStudySetViewController controller = loader.getController();
 		controller.setSubject(parentSubject);
+		controller.setParentController(parentController);
 		
 		
 		Stage addDialogueStage = new Stage();
@@ -195,8 +203,18 @@ public class Main extends Application {
 		controller.setTitle(queueName);//Passing Data into the controller!
 		controller.setLearningObjectives(queueContents);//Initializes StudySet object in StudySet View
 		mainLayout.setCenter(subjectView);
-		
-		
+	}
+	
+	public static void showMainStudyView(String queueName, PriorityQueue<LearningObjective> queueContents, Subject parentSubject) throws IOException {
+		System.out.println("ShowStudySetView()");
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(Main.class.getResource("Study/MainStudyView.fxml"));//Path to fxml doc
+		BorderPane subjectView = loader.load();
+		MainStudyViewController controller = loader.getController();//Passing Data into the controller
+		controller.setSubject(parentSubject);
+		controller.setTitle(queueName);//Passing Data into the controller!
+		controller.setLearningObjectives(queueContents);//Initializes StudySet object in StudySet View
+		mainLayout.setCenter(subjectView);
 	}
 	
 

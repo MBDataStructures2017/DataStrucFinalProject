@@ -84,6 +84,11 @@ public class StudySetViewController implements Initializable{
 			cards.getItems().add(studySet.getTempCardTitles().get(j));
 		}
 	}
+	
+	@FXML
+	public void goBack() throws IOException {
+		main.showSubjectView(studySet.getParentSubject().getName());
+	}
 
 
 	@Override

@@ -8,6 +8,7 @@ import java.io.PrintWriter;
 
 import Logic.Subject;
 import flexCards.Main;
+import flexCards.Subject.SubjectViewController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -17,6 +18,8 @@ public class AddStudySetViewController {
 	private Main main;
 	
 	private Subject subject;
+	
+	private SubjectViewController parentController;
 	
 	@FXML
 	private TextField studySetName;
@@ -69,6 +72,12 @@ public class AddStudySetViewController {
 		System.out.println(subject.getFilePath());
 		System.out.println(subject.getFilePathToStudySetsFile());
 	}
+	
+	public void setParentController(SubjectViewController controller) {
+		this.parentController = controller;
+	}
+	
+	
 	
 	@FXML
 	public void addNewStudySet() throws IOException {
@@ -149,6 +158,8 @@ public class AddStudySetViewController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+        
+        parentController.refreshStudySets();
 		
 		
 		close();

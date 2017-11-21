@@ -53,6 +53,6 @@ public class MainMenuController implements Initializable{
 	
 	@FXML
 	public void goNewSubject() throws IOException {
-		main.showAddSubject();
+		main.showAddSubject(this);
 	}
 }

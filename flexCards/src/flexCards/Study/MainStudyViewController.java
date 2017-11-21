@@ -7,22 +7,26 @@ import java.util.ResourceBundle;
 
 import Logic.LearningObjective;
 import Logic.StudySet;
+import Logic.Subject;
 import flexCards.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
-public class StudyViewController implements Initializable{
+public class MainStudyViewController implements Initializable{
 	
 	private PriorityQueue<LearningObjective> LOQueue;
 	private boolean hasFlipped;
 	private LearningObjective currentLO;
-	private StudySet studySet;
+	private Subject subject;
 	
 	
 	@FXML
 	private Label titleLabel;
+	
+	@FXML
+	private Label studySetLabel;
 	
 	@FXML
 	private Label fromLabel;
@@ -49,6 +53,8 @@ public class StudyViewController implements Initializable{
 		fromLabel.setText(queue.peek().getFromField());
 		fromLabelName.setText(queue.peek().getFromFieldName());
 		toLabelName.setText(queue.peek().getToFieldName());
+		
+		studySetLabel.setText("Study Set: " + queue.peek().getParentFlexCard().getParentStudySet().getName());
 	}
 	
 	@FXML
@@ -59,7 +65,8 @@ public class StudyViewController implements Initializable{
 		fromLabel.setText(LOQueue.peek().getFromField());
 		fromLabelName.setText(LOQueue.peek().getFromFieldName());
 		toLabelName.setText(LOQueue.peek().getToFieldName());
-		//fromLabel.setText(LOQueue.peek().getToField());
+		studySetLabel.setText("Study Set: " + LOQueue.peek().getParentFlexCard().getParentStudySet().getName());
+		
 		guessBox.setVisible(false);
 		toLabel.setVisible(false);
 		
@@ -74,6 +81,8 @@ public class StudyViewController implements Initializable{
 		fromLabel.setText(LOQueue.peek().getFromField());
 		fromLabelName.setText(LOQueue.peek().getFromFieldName());
 		toLabelName.setText(LOQueue.peek().getToFieldName());
+		studySetLabel.setText("Study Set: " + LOQueue.peek().getParentFlexCard().getParentStudySet().getName());
+		
 		//fromLabel.setText(LOQueue.peek().getToField());
 		guessBox.setVisible(false);
 		toLabel.setVisible(false);
@@ -87,6 +96,8 @@ public class StudyViewController implements Initializable{
 		fromLabel.setText(LOQueue.peek().getFromField());
 		fromLabelName.setText(LOQueue.peek().getFromFieldName());
 		toLabelName.setText(LOQueue.peek().getToFieldName());
+		studySetLabel.setText("Study Set: " + LOQueue.peek().getParentFlexCard().getParentStudySet().getName());
+		
 		//fromLabel.setText(LOQueue.peek().getToField());
 		guessBox.setVisible(false);
 		toLabel.setVisible(false);
@@ -100,6 +111,8 @@ public class StudyViewController implements Initializable{
 		fromLabel.setText(LOQueue.peek().getFromField());
 		fromLabelName.setText(LOQueue.peek().getFromFieldName());
 		toLabelName.setText(LOQueue.peek().getToFieldName());
+		studySetLabel.setText("Study Set: " + LOQueue.peek().getParentFlexCard().getParentStudySet().getName());
+		
 		//fromLabel.setText(LOQueue.peek().getToField());
 		guessBox.setVisible(false);
 		toLabel.setVisible(false);
@@ -113,6 +126,8 @@ public class StudyViewController implements Initializable{
 		fromLabel.setText(LOQueue.peek().getFromField());
 		fromLabelName.setText(LOQueue.peek().getFromFieldName());
 		toLabelName.setText(LOQueue.peek().getToFieldName());
+		studySetLabel.setText("Study Set: " + LOQueue.peek().getParentFlexCard().getParentStudySet().getName());
+		
 		//toLabel.setText(LOQueue.peek().getToField());
 		guessBox.setVisible(false);
 		toLabel.setVisible(false);
@@ -125,24 +140,20 @@ public class StudyViewController implements Initializable{
 		guessBox.setVisible(true);
 	}
 	
-	public void setStudySet(StudySet studySet) {
-		this.studySet = studySet;
+	public void setSubject(Subject studySet) {
+		this.subject = studySet;
 	}
 	
 
 	
 	@FXML
 	public void goBack() throws IOException {
-		Main.showStudySetView(studySet.getParentSubject(), studySet.getName());
+		Main.showSubjectView(subject.getName());
 	}
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		//fromLabel.setText(LOQueue.peek().getFromField());
-		//fromLabel.setText(LOQueue.peek().getToField());
 		guessBox.setVisible(false);
 		toLabel.setVisible(false);
-		//currentLO = LOQueue.peek();
-		
 	}
 }

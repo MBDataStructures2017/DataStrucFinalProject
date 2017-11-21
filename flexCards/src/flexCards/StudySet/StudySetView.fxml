@@ -8,13 +8,6 @@
 <?import javafx.scene.layout.BorderPane?>
 
 <BorderPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="flexCards.StudySet.StudySetViewController">
-   <top>
-      <Label fx:id="title" text="Study Set" BorderPane.alignment="CENTER">
-         <font>
-            <Font size="34.0" />
-         </font>
-      </Label>
-   </top>
    <center>
       <GridPane BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -56,4 +49,40 @@
          </children>
       </GridPane>
    </center>
+   <top>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="294.0" minWidth="10.0" prefWidth="84.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="715.0" minWidth="10.0" prefWidth="715.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="144.0" minWidth="10.0" prefWidth="77.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#goBack" text="Back" textFill="RED">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+               <children>
+                  <Label fx:id="title" text="StudySet Label">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="104.0" GridPane.columnIndex="2" />
+         </children>
+      </GridPane>
+   </top>
+   <padding>
+      <Insets top="10.0" />
+   </padding>
 </BorderPane>

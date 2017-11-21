@@ -36,7 +36,7 @@ public class FlexCard {
 		
 		
 		
-		System.out.println(fieldArr[0]+"__"+fieldComboKnowledgeIndexes.length +"____"+allFieldComboKIStrArr.length);
+		
 		for(int k = 1; k < allFieldComboKIStrArr.length; k++) {
 			//System.out.println(fieldArr[0] +"_"+fieldComboKnowledgeIndexes[k] + "_"/*allFieldComboKIStrArr[k]*/);
 			fieldComboKnowledgeIndexes[k] = Double.parseDouble(allFieldComboKIStrArr[k]);
@@ -101,6 +101,10 @@ public class FlexCard {
 
 	public void setLearningObjectives(ArrayList<LearningObjective> learningObjectives) {
 		this.learningObjectives = learningObjectives;
+	}
+	
+	public StudySet getParentStudySet() {
+		return this.parentSet;
 	}
 	
 	
