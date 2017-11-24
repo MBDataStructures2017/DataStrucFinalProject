@@ -146,7 +146,7 @@ public class AddStudySetViewController {
 		
 			
 		File targetStudySetFile = new File(subject.getFilePathToStudySetsFile());
-		Main.append(outputLine, targetStudySetFile);
+		Main.append(outputLine, targetStudySetFile, false);
 		System.out.println(new File(subject.getFilePath()+"/"+studySetName.getText()).mkdir());
 		File fileObject = new File(subject.getFilePath()+"/"+studySetName.getText()+"/flexCards.txt");
 		

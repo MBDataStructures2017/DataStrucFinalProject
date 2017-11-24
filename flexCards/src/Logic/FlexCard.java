@@ -8,63 +8,84 @@ public class FlexCard {
 	
 	private double knowledgeIndex;
 	private String primaryField;
-	private ArrayList<String> fields;
+	private String[] fields;
 	private ArrayList<LearningObjective> learningObjectives;
 	private StudySet parentSet;
 	private String[] fieldNames;
+	private String dataLine;
+	private int dataLineIndex;
 	//private String[] fieldCombos;
+
+	private double[] fieldComboKnowledgeIndexes;
 	
-	public FlexCard(String studySetLine, String line, StudySet parentSet) {
+	public FlexCard(String studySetLine, String line, StudySet parentSet, int dataLineIndex) {
 		learningObjectives = new ArrayList<LearningObjective>();
-		fields = new ArrayList<String>();
+		//fields = new ArrayList<String>();
 		this.parentSet = parentSet;
 		this.fieldNames = studySetLine.substring(studySetLine.indexOf("<f>")+3, studySetLine.indexOf("</f>")).split("\\*");
+		this.dataLine = line;
+		this.dataLineIndex = dataLineIndex;
+		this.knowledgeIndex = Double.parseDouble(line.substring(0, line.indexOf("*")));
 		
 		
-		String[] fieldArr = line.substring(line.indexOf("<f>")+3, line.indexOf("</f>")).split("\\*");
-
-		
+		fields = line.substring(line.indexOf("<f>")+3, line.indexOf("</f>")).split("\\*");
 		
 		String[] fieldComboArr = parentSet.getFieldCombos();
+		
+		String[] allFieldComboKIStr = line.substring(line.indexOf("</f>")+4).split("\\*");
+		System.out.println(line.substring(line.indexOf("</f>")+4));
 
-		//this.fieldCombos = fieldComboArr;
 		
 		
-		String allFieldComboKI = line.substring(line.indexOf("</f>")+4);
-		String[] allFieldComboKIStrArr = allFieldComboKI.split("\\*");
-		double[] fieldComboKnowledgeIndexes = new double[fieldComboArr.length];
+		//System.out.println(allFieldComboKIStr.length);
+		this.fieldComboKnowledgeIndexes = new double[fieldComboArr.length];
 		
 		
 		
 		
-		for(int k = 1; k < allFieldComboKIStrArr.length; k++) {
+		//System.out.println(allFieldComboKIStr.length);
+		for(int k = 0; k < allFieldComboKIStr.length; k++) {
 			//System.out.println(fieldArr[0] +"_"+fieldComboKnowledgeIndexes[k] + "_"/*allFieldComboKIStrArr[k]*/);
-			fieldComboKnowledgeIndexes[k] = Double.parseDouble(allFieldComboKIStrArr[k]);
+			fieldComboKnowledgeIndexes[k] = Double.parseDouble(allFieldComboKIStr[k]);
+			//System.out.println("Boi:" + fieldComboKnowledgeIndexes[k]);
 		}
 		
-		for(int h = 1; h < fieldComboArr.length; h++) {
+		for(int h = 0; h < fieldComboArr.length; h++) {
 			int fromIndex = Integer.parseInt(fieldComboArr[h].substring(1, 2));
 			fromIndex--;
 			int toIndex = Integer.parseInt(fieldComboArr[h].substring(fieldComboArr[h].length() -1, fieldComboArr[h].length()));
 			toIndex--;
-			learningObjectives.add(new LearningObjective(fieldArr[fromIndex],fromIndex, fieldArr[toIndex],toIndex, fieldComboKnowledgeIndexes[h], this));
+			learningObjectives.add(new LearningObjective(fields[fromIndex],fromIndex, fields[toIndex],toIndex, fieldComboKnowledgeIndexes[h],h, this));
 		}
 		
-		this.primaryField = fieldArr[0];
-		for(int j = 0; j < fieldArr.length; j++) {
-			fields.add(fieldArr[j]);
-		}
+		
+		this.primaryField = fields[0];
+		
+		//printCard();
 	}
 	
+	public double[] getFieldComboKnowledgeIndexes() {
+		return fieldComboKnowledgeIndexes;
+	}
+
 	public void printCard() {
+		System.out.println("Line in flecCards.txtFile:" + dataLineIndex + " " + dataLine);
 		System.out.println("--------------Fields:---------------");
-		for(int k = 0; k < fields.size(); k++) {
-			System.out.println("[" + fields.get(k) + "]");
+		for(int k = 0; k < fields.length; k++) {
+			System.out.println("[" + fields[k] + "]");
 		}
 		System.out.println("--------Learning Objectives:--------");
 		for(LearningObjective lo : learningObjectives) {
 			System.out.println(lo.toString());
 		}
+	}
+	
+	public String getDataLine() {
+		return dataLine;
+	}
+	
+	public int getDataLineIndex() {
+		return dataLineIndex;
 	}
 
 	public String[] getFieldNames() {
@@ -87,11 +108,11 @@ public class FlexCard {
 		this.primaryField = primaryField;
 	}
 
-	public ArrayList<String> getFields() {
+	public String[] getFields() {
 		return fields;
 	}
 
-	public void setFields(ArrayList<String> fields) {
+	public void setFields(String[] fields) {
 		this.fields = fields;
 	}
 
@@ -106,6 +127,7 @@ public class FlexCard {
 	public StudySet getParentStudySet() {
 		return this.parentSet;
 	}
+	
 	
 	
 	

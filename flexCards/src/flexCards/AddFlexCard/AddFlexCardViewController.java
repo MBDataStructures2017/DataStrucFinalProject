@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 import Logic.StudySet;
 import flexCards.Main;
+import flexCards.StudySet.StudySetViewController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
@@ -15,6 +16,8 @@ import javafx.stage.Stage;
 
 public class AddFlexCardViewController {
 	private Main main;
+	
+	private StudySetViewController parentController;
 	
 	private StudySet studySet;
 	
@@ -93,6 +96,11 @@ public class AddFlexCardViewController {
 	}
 	
 	@FXML
+	public void setParentController(StudySetViewController parentController) {
+		this.parentController = parentController;
+	}
+	
+	@FXML
 	public void addNewFlexCard() throws IOException {
 		String[] fieldCombos = studySet.getFieldCombos();
 		String heading = "100*0*";
@@ -130,7 +138,9 @@ public class AddFlexCardViewController {
 		System.out.println(studySet.getFilePath());
 		
 		File targetFlexCardsFile = new File(studySet.getFilePath()+"/flexCards.txt");
-		Main.append(outputLine, targetFlexCardsFile);
+		Main.append(outputLine, targetFlexCardsFile, false);
+		
+		parentController.refreshCards();
 		
 		close();
 		

@@ -1,0 +1,2 @@
+
+Companies*0*0*0*<f>Name*Year Founded*Evaluation*Description*</f><KI>*F1->F2*F1->F3*F1->F4*F4->F1*</KI>

@@ -29,7 +29,7 @@ public class AddSubjectViewController {
 	public void addNewSubject() throws IOException {
 		if(inputLine.getText().equals("") == false) {
 			File subjects = new File("Data/Subjects.txt");
-			Main.append(inputLine.getText(), subjects);
+			Main.append(inputLine.getText(), subjects, false);
 			new File("Data/"+inputLine.getText()).mkdir();
 			File fileObject = new File("Data/"+inputLine.getText()+"/StudySets.txt");
 			

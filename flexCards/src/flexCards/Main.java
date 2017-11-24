@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.PriorityQueue;
 import java.util.Scanner;
@@ -34,6 +35,20 @@ public class Main extends Application {
 	private static SubjectViewController subjectViewController;
 	
 	///////////////Logic Methods//////////////////
+	public static void clearFile(String filePath) throws FileNotFoundException {
+		PrintWriter pw = new PrintWriter(filePath);
+		pw.close();
+	}
+	
+	public static void append(String s, File f, boolean isEmptyFile) throws IOException {
+		if( !isEmptyFile) {
+			s = "\n" + s;
+		}
+		FileWriter fw = new FileWriter(f, true);
+		fw.write(s);
+		fw.close();
+	}
+	
 	/**Creates an arraylist of strings from a target text file. 
 	 * 
 	 * @param targetFile - The name of the file that you wish to use a your source for your new arraylist of strings. Include file extensions.
@@ -61,11 +76,25 @@ public class Main extends Application {
 		return convertedFile;
 	}
 	
-	public static void append(String s, File f) throws IOException {
-		s = "\n" + s;
-		FileWriter fw = new FileWriter(f, true);
-		fw.write(s);
-		fw.close();
+	/**
+	 * 
+	 * @param pathToFile
+	 * @param lineIndex NOTE: File Indexes start at 1, not 0.
+	 * @param newLine
+	 * @throws IOException 
+	 */
+	public static void replaceLineInFile(String pathToFile, int lineIndex, String newLine) throws IOException {
+		ArrayList<String> fileContents = txtToStringArrayList(pathToFile);
+		File file = new File(pathToFile);
+		boolean isEmpty = (fileContents.get(0).equals("") && fileContents.size() == 1);
+		fileContents.set(lineIndex - 1, newLine);
+		clearFile(pathToFile);
+		append(fileContents.remove(0), file, true);
+		for(String s : fileContents) {
+			append(s, file, false);
+		}
+			
+		
 	}
 	///////////////End of Logic Methods////////////////
 	
@@ -147,13 +176,14 @@ public class Main extends Application {
 		addDialogueStage.showAndWait();
 	}
 	
-	public static void showAddFlexCard(StudySet parentStudySet) throws IOException {
+	public static void showAddFlexCard(StudySet parentStudySet, StudySetViewController parentController) throws IOException {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(Main.class.getResource("AddFlexCard/AddFlexCardView.fxml"));
 		BorderPane addFlexCard = loader.load();
 		
 		AddFlexCardViewController controller = loader.getController();
 		controller.setStudySet(parentStudySet);
+		controller.setParentController(parentController);
 		controller.initializeFeildLabels();
 		
 		

@@ -49,17 +49,19 @@ public class StudyViewController implements Initializable{
 		fromLabel.setText(queue.peek().getFromField());
 		fromLabelName.setText(queue.peek().getFromFieldName());
 		toLabelName.setText(queue.peek().getToFieldName());
+		
+		System.out.println(LOQueue.peek().getFromField());
 	}
 	
 	@FXML
-	public void evaluate1(){
+	public void evaluate1() throws IOException{
 		LearningObjective justRemoved = LOQueue.poll();
-		justRemoved.setKnowledgeIndex(justRemoved.getKnowledgeIndex() -10);//Oversimplification of Algorithm
+		justRemoved.evaluate1();
+		
 		LOQueue.add(justRemoved);
 		fromLabel.setText(LOQueue.peek().getFromField());
 		fromLabelName.setText(LOQueue.peek().getFromFieldName());
 		toLabelName.setText(LOQueue.peek().getToFieldName());
-		//fromLabel.setText(LOQueue.peek().getToField());
 		guessBox.setVisible(false);
 		toLabel.setVisible(false);
 		
@@ -67,53 +69,53 @@ public class StudyViewController implements Initializable{
 	}
 	
 	@FXML
-	public void evaluate2(){
+	public void evaluate2() throws IOException{
 		LearningObjective justRemoved = LOQueue.poll();
-		justRemoved.setKnowledgeIndex(justRemoved.getKnowledgeIndex() -3);//Oversimplification of Algorithm
+		justRemoved.evaluate2();
+		
 		LOQueue.add(justRemoved);
 		fromLabel.setText(LOQueue.peek().getFromField());
 		fromLabelName.setText(LOQueue.peek().getFromFieldName());
 		toLabelName.setText(LOQueue.peek().getToFieldName());
-		//fromLabel.setText(LOQueue.peek().getToField());
 		guessBox.setVisible(false);
 		toLabel.setVisible(false);
 	}
 	
 	@FXML
-	public void evaluate3(){
+	public void evaluate3() throws IOException{
 		LearningObjective justRemoved = LOQueue.poll();
-		justRemoved.setKnowledgeIndex(justRemoved.getKnowledgeIndex());//Oversimplification of Algorithm
+		justRemoved.evaluate3();
+		
 		LOQueue.add(justRemoved);
 		fromLabel.setText(LOQueue.peek().getFromField());
 		fromLabelName.setText(LOQueue.peek().getFromFieldName());
 		toLabelName.setText(LOQueue.peek().getToFieldName());
-		//fromLabel.setText(LOQueue.peek().getToField());
 		guessBox.setVisible(false);
 		toLabel.setVisible(false);
 	}
 	
 	@FXML
-	public void evaluate4(){
+	public void evaluate4() throws IOException{
 		LearningObjective justRemoved = LOQueue.poll();
-		justRemoved.setKnowledgeIndex(justRemoved.getKnowledgeIndex()+3);//Oversimplification of Algorithm
+		justRemoved.evaluate4();
+		
 		LOQueue.add(justRemoved);
 		fromLabel.setText(LOQueue.peek().getFromField());
 		fromLabelName.setText(LOQueue.peek().getFromFieldName());
 		toLabelName.setText(LOQueue.peek().getToFieldName());
-		//fromLabel.setText(LOQueue.peek().getToField());
 		guessBox.setVisible(false);
 		toLabel.setVisible(false);
 	}
 	
 	@FXML
-	public void evaluate5(){
+	public void evaluate5() throws IOException{
 		LearningObjective justRemoved = LOQueue.poll();
-		justRemoved.setKnowledgeIndex(justRemoved.getKnowledgeIndex()+10);//Oversimplification of Algorithm
+		justRemoved.evaluate5();
+		
 		LOQueue.add(justRemoved);
 		fromLabel.setText(LOQueue.peek().getFromField());
 		fromLabelName.setText(LOQueue.peek().getFromFieldName());
 		toLabelName.setText(LOQueue.peek().getToFieldName());
-		//toLabel.setText(LOQueue.peek().getToField());
 		guessBox.setVisible(false);
 		toLabel.setVisible(false);
 	}

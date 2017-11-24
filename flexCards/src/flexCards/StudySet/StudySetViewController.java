@@ -27,10 +27,6 @@ public class StudySetViewController implements Initializable{
 	
 	
 	
-	
-	
-	
-	
 	@FXML
 	public void printSelection() {
 		System.out.println(cards.getSelectionModel().getSelectedItem().toString());
@@ -71,7 +67,7 @@ public class StudySetViewController implements Initializable{
 	
 	@FXML
 	public void goNewFlexCard() throws IOException {
-		main.showAddFlexCard(studySet);
+		main.showAddFlexCard(studySet, this);
 	}
 	
 	@FXML

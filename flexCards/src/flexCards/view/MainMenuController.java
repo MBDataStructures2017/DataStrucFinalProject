@@ -19,8 +19,6 @@ public class MainMenuController implements Initializable{
 	
 	private Main main;
 	
-	//ArrayList<String> subjects = new ArrayList<String>();
-	
 	
 	@FXML
 	private ChoiceBox subjectSelector;
@@ -32,7 +30,6 @@ public class MainMenuController implements Initializable{
 	
 	//Initializes the subjectSelector TextBox with all subjects from Subjects.txt
 	public void addSubjectsText() {
-		System.out.println("GGG");
 		ArrayList<String> subjects = Main.txtToStringArrayList("Data/Subjects.txt");
 		subjectSelector.getItems().clear();
 		for(int i = 0; i < subjects.size(); i++) {

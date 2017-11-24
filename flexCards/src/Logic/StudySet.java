@@ -36,14 +36,20 @@ public class StudySet {
 			String tempCardTitle = tempCardLines.get(i).substring(tempCardLines.get(i).indexOf("<f>")+3, tempCardLines.get(i).indexOf("</f>"));
 			tempCardTitle = tempCardTitle.substring(0, tempCardTitle.indexOf("*"));
 			tempCardTitles.add(tempCardTitle);
-			cards.add( new FlexCard(dataLine, tempCardLines.get(i), this));
+			cards.add( new FlexCard(dataLine, tempCardLines.get(i), this, i + 1));
 		}
 		
 		for(int l = 0; l < cards.size(); l++) {
 			for(int g = 0; g <cards.get(l).getLearningObjectives().size(); g++) {
-				LOs.add(cards.get(l).getLearningObjectives().get(g));
+				LOs.offer(cards.get(l).getLearningObjectives().get(g));
+				//System.out.println(cards.get(l).getLearningObjectives().get(g));
 			}
 		}
+		
+		
+		
+		
+		
 	}
 	
 	public ArrayList<String> getTempCardTitles() {
@@ -58,7 +64,7 @@ public class StudySet {
 	}
 	
 	public String[] getFieldCombos() {
-		return dataLine.substring(dataLine.indexOf("<KI>")+4, dataLine.indexOf("</KI>")).split("\\*");
+		return dataLine.substring(dataLine.indexOf("<KI>")+5, dataLine.indexOf("</KI>")).split("\\*");
 	}
 	
 	public String getFilePath() {
