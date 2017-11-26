@@ -48,8 +48,11 @@ public class SubjectViewController implements Initializable{
 		main.showAddStudySet(subject, this);
 	}
 	
-	//Initializes and populates subject (population is still as WIP)
-	//Displays all of subjects studySets in the studySets ListView
+	/**
+	 * Initializes and populates subject (population is still as WIP)
+	 * Displays all of subjects studySets in the studySets ListView
+	 * @param subjectName
+	 */
 	public void subjectInit(String subjectName) {
 		subject = new Subject(subjectName);
 		for(int i = 0; i < subject.getStudySets().size(); i++) {

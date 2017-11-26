@@ -21,9 +21,10 @@ public class AddStudySetViewController {
 	
 	private SubjectViewController parentController;
 	
+	
+	///A Lot of textFields for the user to determine the new Study Set
 	@FXML
 	private TextField studySetName;
-	
 	@FXML
 	private TextField field1Name;
 	@FXML
@@ -69,8 +70,6 @@ public class AddStudySetViewController {
 	@FXML
 	public void setSubject(Subject parentSubject) {
 		this.subject = parentSubject;
-		System.out.println(subject.getFilePath());
-		System.out.println(subject.getFilePathToStudySetsFile());
 	}
 	
 	public void setParentController(SubjectViewController controller) {
@@ -78,7 +77,10 @@ public class AddStudySetViewController {
 	}
 	
 	
-	
+	/**
+	 * Creates a new study set File Folder and edits the Data/Subject/StudySets.txt file with.
+	 * @throws IOException
+	 */
 	@FXML
 	public void addNewStudySet() throws IOException {
 		//Check For invalid states
@@ -93,6 +95,7 @@ public class AddStudySetViewController {
 		}
 		
 		/////////Build Line String////////
+			//////Building field Portion
 		String heading = studySetName.getText() + "*0*0*0*";
 		String fields = "<f>";
 		if(field1Name.getText().equals("") == false)
@@ -116,7 +119,7 @@ public class AddStudySetViewController {
 		
 		fields += "</f>";
 		
-		
+			/////Building Field Combo portion "F2->F1"
 		String KI = "<KI>*";
 		if(field1LearningObjectives.getText().equals("") == false)
 			KI += fieldComboFormater("F1", field1LearningObjectives.getText());
@@ -141,12 +144,12 @@ public class AddStudySetViewController {
 		
 		String outputLine = heading+fields+KI;
 		
-		System.out.println(outputLine);
-		System.out.println(subject.getFilePathToStudySetsFile());
 		
-			
+		//Access studySets file in parent subject	
 		File targetStudySetFile = new File(subject.getFilePathToStudySetsFile());
+		//Adds this line to it.
 		Main.append(outputLine, targetStudySetFile, false);
+		//Creates a new folder for this studySet
 		System.out.println(new File(subject.getFilePath()+"/"+studySetName.getText()).mkdir());
 		File fileObject = new File(subject.getFilePath()+"/"+studySetName.getText()+"/flexCards.txt");
 		
@@ -159,9 +162,10 @@ public class AddStudySetViewController {
 			e.printStackTrace();
 		}
         
+        //refreshes parent studySet so that the new study ser is reflected
         parentController.refreshStudySets();
 		
-		
+		//Closes this window
 		close();
 		
 		

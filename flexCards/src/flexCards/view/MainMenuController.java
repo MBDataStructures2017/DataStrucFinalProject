@@ -23,13 +23,13 @@ public class MainMenuController implements Initializable{
 	@FXML
 	private ChoiceBox subjectSelector;
 	
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-		
-	}
 	
-	//Initializes the subjectSelector TextBox with all subjects from Subjects.txt
+	
+	/**
+	 * Initializes the subjectSelector TextBox with all subjects from Subjects.txt
+	 */
 	public void addSubjectsText() {
+		//Loops through each line in Subjects.txt, adds each line to subjectSelector.
 		ArrayList<String> subjects = Main.txtToStringArrayList("Data/Subjects.txt");
 		subjectSelector.getItems().clear();
 		for(int i = 0; i < subjects.size(); i++) {
@@ -44,12 +44,20 @@ public class MainMenuController implements Initializable{
 		if (Files.isDirectory(Paths.get("Data/" + subjectSelector.getSelectionModel().getSelectedItem().toString()))) {
 			main.showSubjectView(subjectSelector.getSelectionModel().getSelectedItem().toString()); 
 		} 
-		//main.showSubjectView(subjectSelector.getSelectionModel().getSelectedItem().toString());
+		
 	}
 	
 	
 	@FXML
 	public void goNewSubject() throws IOException {
 		main.showAddSubject(this);
+	}
+
+
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		// TODO Auto-generated method stub
+		
 	}
 }

@@ -17,6 +17,7 @@ public class Subject {
 		this.name = inString;
 		this.filePath = "Data/" + name +"/";
 		this.filePathToStudySetsFile = "Data/" + name +"/StudySets.txt";
+		
 		ArrayList<String> studySetLines = Main.txtToStringArrayList(filePathToStudySetsFile);
 		studySets = new ArrayList<StudySet>();
 		
@@ -26,20 +27,21 @@ public class Subject {
 		}
 	}
 	
-	public String getFilePath() {
-		return filePath;
-	}
-	
+	//Loops through each LearningObjective of each card of each study set in this subject and returns a priority queue containing all of them. 
 	public PriorityQueue<LearningObjective> getMainQueue(){
 		PriorityQueue<LearningObjective> queue = new PriorityQueue<LearningObjective>();
 		for(StudySet set : studySets) {
-			for(int i = 0; i < set.getCards().size(); i++) {
-				for(int k = 0; k < set.getCards().get(i).getLearningObjectives().size(); k++) {
-					queue.add(set.getCards().get(i).getLearningObjectives().get(k));
+			for(FlexCard c : set.getCards()) {
+				for(LearningObjective lo : c.getLearningObjectives()) {
+					queue.add(lo);
 				}
 			}
 		}
 		return queue;
+	}
+	
+	public String getFilePath() {
+		return filePath;
 	}
 
 	public String getFilePathToStudySetsFile() {

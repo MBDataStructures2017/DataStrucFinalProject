@@ -35,11 +35,23 @@ public class Main extends Application {
 	private static SubjectViewController subjectViewController;
 	
 	///////////////Logic Methods//////////////////
+	/**
+	 * Clears the text file whose relative path is specified by FilePath.
+	 * @param filePath The reletive path to the target file
+	 * @throws FileNotFoundException
+	 */
 	public static void clearFile(String filePath) throws FileNotFoundException {
 		PrintWriter pw = new PrintWriter(filePath);
 		pw.close();
 	}
 	
+	/**
+	 * Appends the string s onto the end of a text file s.
+	 * @param s -The string to be appended
+	 * @param f -The file that is being accessed
+	 * @param isEmptyFile - Whether or not the file is empty
+	 * @throws IOException
+	 */
 	public static void append(String s, File f, boolean isEmptyFile) throws IOException {
 		if( !isEmptyFile) {
 			s = "\n" + s;
@@ -77,15 +89,15 @@ public class Main extends Application {
 	}
 	
 	/**
-	 * 
+	 * Replaces the [lineIndex}th line in the file specified by[pathToFile] with [newLine]
 	 * @param pathToFile
 	 * @param lineIndex NOTE: File Indexes start at 1, not 0.
 	 * @param newLine
 	 * @throws IOException 
 	 */
 	public static void replaceLineInFile(String pathToFile, int lineIndex, String newLine) throws IOException {
-		ArrayList<String> fileContents = txtToStringArrayList(pathToFile);
-		File file = new File(pathToFile);
+		ArrayList<String> fileContents = txtToStringArrayList(pathToFile); // Creates a "Copy" of the file
+		File file = new File(pathToFile); 
 		boolean isEmpty = (fileContents.get(0).equals("") && fileContents.size() == 1);
 		fileContents.set(lineIndex - 1, newLine);
 		clearFile(pathToFile);
@@ -104,11 +116,6 @@ public class Main extends Application {
 	public void start(Stage primaryStage) throws IOException {
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("flexCards");
-		
-		
-		
-		//Load the txt file with all subject names.
-		//ArrayList<String> subjectNames = txtToStringArrayList("Data/Subjects.txt");
 		
 		showMainView();
 		showMainItems();//Passes in the names of all subjects for the user to potentially select.
@@ -134,32 +141,77 @@ public class Main extends Application {
 		primaryStage.show();
 	}
 	
+	/**
+	 * Initialized and sets up a window for a subject view 
+	 * @param subjectName The name of the subject. This is displayed and used to get data.
+	 * @throws IOException
+	 */
+	public static void showSubjectView(String subjectName) throws IOException {
+		System.out.println("ShowSubjectView()");
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(Main.class.getResource("Subject/SubjectView.fxml"));//Path to fxml doc
+		BorderPane subjectView = loader.load();
+		
+		SubjectViewController controller = loader.getController();//Passing Data into the controller
+		controller.setTitle(subjectName);//Passing Data into the controller!
+		controller.subjectInit(subjectName);//Initializes the Subject object within SubjectView
+		mainLayout.setCenter(subjectView);
+	}
+	
+	/**
+	 * Launches new window to create a new subject
+	 * @param parentController The Mainmenu controller from whitch this method is called.
+	 * @throws IOException
+	 */
 	public static void showAddSubject(MainMenuController parentController) throws IOException {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(Main.class.getResource("AddSubject/AddSubjectView.fxml"));
 		BorderPane addSubject = loader.load();
 		
 		AddSubjectViewController controller = loader.getController();
+		//Passing a referance to the SubjectView Handler from which it launched so that it can update its list of subjects upon close;
 		controller.setParentController(parentController);
 		
 		
-		
+		//UI Boilerplate
 		Stage addDialogueStage = new Stage();
 		addDialogueStage.setTitle("Add New Subject");
 		addDialogueStage.initModality(Modality.WINDOW_MODAL);
 		addDialogueStage.initOwner(primaryStage);
-		
 		Scene scene = new Scene(addSubject);
-		
 		addDialogueStage.setScene(scene);
 		addDialogueStage.showAndWait();
 	}
 	
+	/**
+	 * Shows the view for a specific study set
+	 * @param subject The subject that is the parent of the currently examined studyset
+	 * @param studySetName The name of the study set being displayed in this window. Used for title and file accesing
+	 * @throws IOException
+	 */
+	public static void showStudySetView(Subject subject, String studySetName) throws IOException {
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(Main.class.getResource("StudySet/StudySetView.fxml"));//Path to fxml doc
+		BorderPane subjectView = loader.load();
+		
+		StudySetViewController controller = loader.getController();//Passing Data into the controller
+		controller.setTitle(studySetName);//Passing Data into the controller!
+		controller.initStudySet(subject, studySetName);//Initializes StudySet object in StudySet View
+		mainLayout.setCenter(subjectView);
+	}
+	
+	/**
+	 * Launches new window where once can enter data about a new subject
+	 * @param parentSubject The subject that the new study set will belong to.
+	 * @param parentController The SubjectViewController from where this method was called
+	 * @throws IOException
+	 */
 	public static void showAddStudySet(Subject parentSubject, SubjectViewController parentController) throws IOException {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(Main.class.getResource("AddStudySet/AddStudySetView.fxml"));
 		BorderPane addStudySet = loader.load();
 		
+		//Passing data into this view so that it can edit both its current subject and controller from which it launched.
 		AddStudySetViewController controller = loader.getController();
 		controller.setSubject(parentSubject);
 		controller.setParentController(parentController);
@@ -176,14 +228,21 @@ public class Main extends Application {
 		addDialogueStage.showAndWait();
 	}
 	
+	
+	/**
+	 * Launches new window where one can enter data about a new flexCard within a studySet.
+	 * @param parentStudySet Study set that this new flexCard will belong to
+	 * @param parentController Study set controller from which this method is called from.
+	 * @throws IOException
+	 */
 	public static void showAddFlexCard(StudySet parentStudySet, StudySetViewController parentController) throws IOException {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(Main.class.getResource("AddFlexCard/AddFlexCardView.fxml"));
 		BorderPane addFlexCard = loader.load();
 		
 		AddFlexCardViewController controller = loader.getController();
-		controller.setStudySet(parentStudySet);
-		controller.setParentController(parentController);
+		controller.setStudySet(parentStudySet);//Passing Data
+		controller.setParentController(parentController);//Passing Data
 		controller.initializeFeildLabels();
 		
 		
@@ -198,31 +257,14 @@ public class Main extends Application {
 		addDialogueStage.showAndWait();
 	}
 	
-	//Sets up Subject View
-	public static void showSubjectView(String subjectName) throws IOException {
-		System.out.println("ShowSubjectView()");
-		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(Main.class.getResource("Subject/SubjectView.fxml"));//Path to fxml doc
-		BorderPane subjectView = loader.load();
-		SubjectViewController controller = loader.getController();//Passing Data into the controller
-		
-		controller.setTitle(subjectName);//Passing Data into the controller!
-		controller.subjectInit(subjectName);//Initializes the Subject object within SubjectView
-		mainLayout.setCenter(subjectView);
-	}
-	
-	//Sets up Study Set View
-	public static void showStudySetView(Subject subject, String studySetName) throws IOException {
-		System.out.println("ShowStudySetView()");
-		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(Main.class.getResource("StudySet/StudySetView.fxml"));//Path to fxml doc
-		BorderPane subjectView = loader.load();
-		StudySetViewController controller = loader.getController();//Passing Data into the controller
-		controller.setTitle(studySetName);//Passing Data into the controller!
-		controller.initStudySet(subject, studySetName);//Initializes StudySet object in StudySet View
-		mainLayout.setCenter(subjectView);
-	}
-	
+
+	/**
+	 * Shows the study view for the items in a particular study set.
+	 * @param queueName Name for label. Usually the study set.
+	 * @param queueContents A priority queue that is used to determine what items need to be reviewed.
+	 * @param parentSet Study set whose items are in this queue.
+	 * @throws IOException
+	 */
 	public static void showStudyView(String queueName, PriorityQueue<LearningObjective> queueContents, StudySet parentSet) throws IOException {
 		System.out.println("ShowStudySetView()");
 		FXMLLoader loader = new FXMLLoader();
@@ -235,6 +277,13 @@ public class Main extends Application {
 		mainLayout.setCenter(subjectView);
 	}
 	
+	/**
+	 * Shows the study view for the items in a particular subject
+	 * @param queueName Name for label. Usually the subject.
+	 * @param queueContents A priority queue that is used to determine what items need to be reviewed.
+	 * @param parentSubject Study set whose items are in this queue.
+	 * @throws IOException
+	 */
 	public static void showMainStudyView(String queueName, PriorityQueue<LearningObjective> queueContents, Subject parentSubject) throws IOException {
 		System.out.println("ShowStudySetView()");
 		FXMLLoader loader = new FXMLLoader();
@@ -249,7 +298,6 @@ public class Main extends Application {
 	
 
 	public static void main(String[] args) {
-		
 		launch(args);
 	}
 }

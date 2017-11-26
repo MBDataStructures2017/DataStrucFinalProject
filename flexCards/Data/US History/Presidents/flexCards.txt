@@ -1,3 +1,4 @@
-THIS LINE INTENTIONALLY KEPT FULL
-100*0*<f>Barack Obama*Democrat*2008-2016*Recovery Following 2008 crisis, Affordable Health Care Act, Assasination of Osama Bin Laden*</f>100*100*100*100*100
-100*0*<f>George Washington*N/A*1780-1788*Lead the US in Revolutionary War, First US President*</f>100*100*100*100*100*
+
+178.33333333333334*0<f>Donald J Trump*N/A*2016-2222*WALL*</f>125.0*150.0*135.0*125.0*
+162.5*0<f>Ronald Reagan*Republican*1980-1988*Oversaw the end of the cold war, Bolstered US Defense Budget*</f>125.0*150.0*100.0*112.5*
+100*0*<f>Barack Obama*Democrat*2008-2016*Assasination of Osama Bin Laden, Affordable care act, Post 2008 recovery*</f>100*100*100*100*

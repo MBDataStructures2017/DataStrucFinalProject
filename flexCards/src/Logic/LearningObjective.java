@@ -32,17 +32,17 @@ public class LearningObjective implements Comparable{
 		this.knowledgeIndex = knowledgeIndex;
 		this.parentCard = parentCard;
 		this.fieldComboIndex = fieldComboIndex;
-		
-		//System.out.println(parentCard.getParentStudySet().getFilePath()+"/flexCards.txt");
-		//System.out.println(fieldComboIndex);
 	}
 	
 	public String getFromFieldName() {
 		return parentCard.getFieldNames()[fromFieldIndex];
 	}
 	
+	/**
+	 * 
+	 * @throws IOException
+	 */
 	public void evaluate1() throws IOException {//It works!!!!!
-		
 		Main.replaceLineInFile(parentCard.getParentStudySet().getFilePath()+"/flexCards.txt", parentCard.getDataLineIndex(), generalEvaluate(0.5));
 		
 	}
@@ -79,7 +79,7 @@ public class LearningObjective implements Comparable{
 		String fields = "<f>";
 		String footer = "";
 		
-		//Adjusts the value of this Learning Index to a new value as dertermined by multiplyer
+		//Adjusts the value of this Learning Index to a new value as determined by multiplier
 		knowledgeIndex *= multiplier;
 		System.out.println(knowledgeIndex);
 		
@@ -105,7 +105,6 @@ public class LearningObjective implements Comparable{
 				footer += parentCard.getFieldComboKnowledgeIndexes()[k] + "*";
 			}
 			runningTotal += parentCard.getFieldComboKnowledgeIndexes()[k];
-			
 		}
 		
 		//Set the cards overall Knowlege Index to the average of all FieldCombo Knowledge indexex

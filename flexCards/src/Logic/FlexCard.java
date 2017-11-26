@@ -27,32 +27,31 @@ public class FlexCard {
 		this.dataLineIndex = dataLineIndex;
 		this.knowledgeIndex = Double.parseDouble(line.substring(0, line.indexOf("*")));
 		
-		
+		//Gets the Strings for the data for each field ex: "Barack Obama*2008-2016*Democrat* ---> [Barack Obama] [2008-2016] [Democrat]
 		fields = line.substring(line.indexOf("<f>")+3, line.indexOf("</f>")).split("\\*");
 		
+		//[F1->F2] [F1->F3]....
 		String[] fieldComboArr = parentSet.getFieldCombos();
 		
+		//Coresponds
+		//[F1->F2] [F1->F3]....
+		//[100.00] [203.00]
 		String[] allFieldComboKIStr = line.substring(line.indexOf("</f>")+4).split("\\*");
-		System.out.println(line.substring(line.indexOf("</f>")+4));
 
-		
-		
-		//System.out.println(allFieldComboKIStr.length);
 		this.fieldComboKnowledgeIndexes = new double[fieldComboArr.length];
 		
 		
-		
-		
-		//System.out.println(allFieldComboKIStr.length);
+		//Coverts allFieldComboKIStr to an actuall array of doubles
 		for(int k = 0; k < allFieldComboKIStr.length; k++) {
-			//System.out.println(fieldArr[0] +"_"+fieldComboKnowledgeIndexes[k] + "_"/*allFieldComboKIStrArr[k]*/);
 			fieldComboKnowledgeIndexes[k] = Double.parseDouble(allFieldComboKIStr[k]);
-			//System.out.println("Boi:" + fieldComboKnowledgeIndexes[k]);
 		}
 		
+		//Creating new LearningObjectives
 		for(int h = 0; h < fieldComboArr.length; h++) {
+			//[F1->F3]: from index is 1
 			int fromIndex = Integer.parseInt(fieldComboArr[h].substring(1, 2));
 			fromIndex--;
+			//[F1->F3]: to index is 3
 			int toIndex = Integer.parseInt(fieldComboArr[h].substring(fieldComboArr[h].length() -1, fieldComboArr[h].length()));
 			toIndex--;
 			learningObjectives.add(new LearningObjective(fields[fromIndex],fromIndex, fields[toIndex],toIndex, fieldComboKnowledgeIndexes[h],h, this));
