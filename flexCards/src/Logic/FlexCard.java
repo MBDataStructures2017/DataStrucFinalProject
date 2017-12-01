@@ -16,6 +16,7 @@ public class FlexCard {
 	private int dataLineIndex;
 	//private String[] fieldCombos;
 	//Here is a comment.
+	//Another one
 
 	private double[] fieldComboKnowledgeIndexes;
 	

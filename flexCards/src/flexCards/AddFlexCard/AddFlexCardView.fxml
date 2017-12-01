@@ -35,43 +35,43 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Label fx:id="Field1Label" text="Feild 1:" />
+                        <Label fx:id="Field1Label" text="Field 1:" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
                      <children>
-                        <Label fx:id="Field2Label" text="Feild 2:" />
+                        <Label fx:id="Field2Label" text="Field 2:" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
                      <children>
-                        <Label fx:id="Field3Label" text="Feild 3:" />
+                        <Label fx:id="Field3Label" text="Field 3:" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
                      <children>
-                        <Label fx:id="Field4Label" prefHeight="48.0" prefWidth="56.0" text="Feild 4:" textOverrun="CLIP" wrapText="true" />
+                        <Label fx:id="Field4Label" prefHeight="46.0" prefWidth="47.0" text="Field 4:" textOverrun="CLIP" wrapText="true" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="4">
                      <children>
-                        <Label fx:id="Field5Label" text="Feild 5:" />
+                        <Label fx:id="Field5Label" text="Field 5:" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="6" />
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="6">
                      <children>
-                        <Label fx:id="Field7Label" text="Feild 7:" />
+                        <Label fx:id="Field7Label" text="Field 7:" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="8">
                      <children>
-                        <Label fx:id="Field9Label" text="Feild 9:" />
+                        <Label fx:id="Field9Label" text="Field 9:" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="7">
                      <children>
-                        <Label fx:id="Field8Label" text="Feild 8:" />
+                        <Label fx:id="Field8Label" text="Field 8:" />
                      </children>
                   </HBox>
                   <TextArea fx:id="Feild1Input" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
@@ -121,7 +121,7 @@
                   </TextArea>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="5">
                      <children>
-                        <Label fx:id="Field6Label" text="Feild 6:" />
+                        <Label fx:id="Field6Label" text="Field 6:" />
                      </children>
                   </HBox>
                </children>
