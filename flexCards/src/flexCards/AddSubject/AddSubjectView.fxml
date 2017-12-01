@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
@@ -14,23 +15,35 @@
                <font>
                   <Font size="23.0" />
                </font>
+               <padding>
+                  <Insets top="15.0" />
+               </padding>
             </Label>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+            <HBox alignment="CENTER" prefHeight="99.0" prefWidth="300.0">
                <children>
                   <Label text="Name:  ">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="inputLine" prefHeight="27.0" prefWidth="218.0" />
+                  <TextField fx:id="inputLine" prefHeight="27.0" prefWidth="192.0">
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </TextField>
                </children>
             </HBox>
-            <Button fx:id="submitButton" mnemonicParsing="false" onAction="#addNewSubject" text="Create" textFill="#6fff00">
-               <font>
-                  <Font size="28.0" />
-               </font>
-            </Button>
          </children>
       </VBox>
    </center>
+   <bottom>
+      <Button fx:id="submitButton" mnemonicParsing="false" onAction="#addNewSubject" text="Create" textFill="#6fff00" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Button>
+   </bottom>
+   <padding>
+      <Insets bottom="15.0" />
+   </padding>
 </BorderPane>

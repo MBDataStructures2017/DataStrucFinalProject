@@ -11,7 +11,7 @@
    <center>
       <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0" BorderPane.alignment="CENTER">
          <children>
-            <Label text="Add StudySet">
+            <Label text="Add flexSet">
                <VBox.margin>
                   <Insets />
                </VBox.margin>
@@ -21,7 +21,7 @@
             </Label>
             <HBox alignment="CENTER" prefHeight="48.0" prefWidth="430.0" spacing="20.0">
                <children>
-                  <Label text="Study Set Name:" />
+                  <Label text="flexSet Name:" />
                   <TextField fx:id="studySetName" />
                </children>
             </HBox>
