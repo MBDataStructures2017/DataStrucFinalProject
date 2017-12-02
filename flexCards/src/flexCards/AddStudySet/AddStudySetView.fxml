@@ -13,7 +13,7 @@
          <children>
             <Label text="Add flexSet">
                <VBox.margin>
-                  <Insets />
+                  <Insets top="15.0" />
                </VBox.margin>
                <font>
                   <Font size="21.0" />
@@ -21,27 +21,33 @@
             </Label>
             <HBox alignment="CENTER" prefHeight="48.0" prefWidth="430.0" spacing="20.0">
                <children>
-                  <Label text="flexSet Name:" />
-                  <TextField fx:id="studySetName" />
+                  <Label text="flexSet Name:">
+                     <HBox.margin>
+                        <Insets top="15.0" />
+                     </HBox.margin></Label>
+                  <TextField fx:id="studySetName">
+                     <HBox.margin>
+                        <Insets top="15.0" />
+                     </HBox.margin></TextField>
                </children>
             </HBox>
-            <GridPane alignment="CENTER" prefHeight="425.0" prefWidth="430.0">
+            <GridPane alignment="CENTER" prefHeight="551.0" prefWidth="362.0">
               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="140.0" minWidth="10.0" prefWidth="64.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="219.0" minWidth="10.0" prefWidth="196.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="140.0" minWidth="30.0" prefWidth="50.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="219.0" minWidth="10.0" prefWidth="186.0" />
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="170.0" minWidth="10.0" prefWidth="170.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints maxHeight="83.0" minHeight="10.0" prefHeight="74.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="33.0" minHeight="9.0" prefHeight="18.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="40.0" minHeight="10.0" percentHeight="0.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="40.0" minHeight="10.0" percentHeight="0.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="40.0" minHeight="10.0" percentHeight="0.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="40.0" minHeight="10.0" percentHeight="0.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="40.0" minHeight="10.0" percentHeight="0.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="40.0" minHeight="10.0" percentHeight="0.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="40.0" minHeight="10.0" percentHeight="0.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="40.0" minHeight="10.0" percentHeight="0.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="40.0" minHeight="10.0" percentHeight="0.0" prefHeight="40.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
@@ -51,7 +57,10 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="43.0" prefWidth="170.0" GridPane.columnIndex="2">
                      <children>
-                        <Label alignment="CENTER" text="Learning Objectives (What fields should you be able to know from this field?) List as &quot;F2, F3&quot;" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
+                        <Label alignment="CENTER" text="Learning Objectives (What fields should you be able to know from this field?) List as &quot;F2, F3&quot;" textAlignment="CENTER" textOverrun="CLIP" wrapText="true">
+                           <padding>
+                              <Insets right="10.0" />
+                           </padding></Label>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="9">
@@ -61,7 +70,10 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="9">
                      <children>
-                        <TextField fx:id="field9LearningObjectives" />
+                        <TextField fx:id="field9LearningObjectives">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin></TextField>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
@@ -71,7 +83,10 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="8">
                      <children>
-                        <TextField fx:id="field8LearningObjectives" />
+                        <TextField fx:id="field8LearningObjectives">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin></TextField>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
@@ -81,7 +96,10 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="7">
                      <children>
-                        <TextField fx:id="field7LearningObjectives" />
+                        <TextField fx:id="field7LearningObjectives">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin></TextField>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
@@ -91,7 +109,10 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
                      <children>
-                        <TextField fx:id="field6LearningObjectives" />
+                        <TextField fx:id="field6LearningObjectives">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin></TextField>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
@@ -101,7 +122,10 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
                      <children>
-                        <TextField fx:id="field5LearningObjectives" />
+                        <TextField fx:id="field5LearningObjectives">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin></TextField>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
@@ -111,7 +135,10 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
                      <children>
-                        <TextField fx:id="field4LearningObjectives" />
+                        <TextField fx:id="field4LearningObjectives">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin></TextField>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
@@ -121,7 +148,10 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
                      <children>
-                        <TextField fx:id="field3LearningObjectives" />
+                        <TextField fx:id="field3LearningObjectives">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin></TextField>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
@@ -131,7 +161,10 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <children>
-                        <TextField fx:id="field1LearningObjectives" />
+                        <TextField fx:id="field1LearningObjectives">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin></TextField>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
@@ -139,18 +172,51 @@
                         <TextField fx:id="field2Name" />
                      </children>
                   </HBox>
-                  <Label text="Field 1:" GridPane.rowIndex="1" />
-                  <Label text="Field 2:" GridPane.rowIndex="2" />
-                  <Label text="Field 3:" GridPane.rowIndex="3" />
-                  <Label text="Field 4:" GridPane.rowIndex="4" />
-                  <Label text="Field 5:" GridPane.rowIndex="5" />
-                  <Label text="Field 6:" GridPane.rowIndex="6" />
-                  <Label text="Field 7:" GridPane.rowIndex="7" />
-                  <Label text="Field 8:" GridPane.rowIndex="8" />
-                  <Label text="Field 9:" GridPane.rowIndex="9" />
+                  <Label prefHeight="17.0" prefWidth="53.0" text="Field 1:" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin></Label>
+                  <Label text="Field 2:" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding></Label>
+                  <Label text="Field 3:" GridPane.rowIndex="3">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding></Label>
+                  <Label text="Field 4:" GridPane.rowIndex="4">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding></Label>
+                  <Label text="Field 5:" GridPane.rowIndex="5">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding></Label>
+                  <Label text="Field 6:" GridPane.rowIndex="6">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding></Label>
+                  <Label text="Field 7:" GridPane.rowIndex="7">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding></Label>
+                  <Label text="Field 8:" GridPane.rowIndex="8">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding></Label>
+                  <Label text="Field 9:" GridPane.rowIndex="9">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding></Label>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <children>
-                        <TextField fx:id="field2LearningObjectives" />
+                        <TextField fx:id="field2LearningObjectives">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin></TextField>
                      </children>
                   </HBox>
                </children>
@@ -159,6 +225,9 @@
                <font>
                   <Font size="22.0" />
                </font>
+               <VBox.margin>
+                  <Insets bottom="15.0" />
+               </VBox.margin>
             </Button>
          </children>
          <padding>

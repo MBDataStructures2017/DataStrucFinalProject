@@ -25,16 +25,22 @@
          <children>
             <HBox alignment="CENTER">
                <children>
-                  <Label fx:id="titleLabel" text="Study Queue">
+                  <Label fx:id="titleLabel" text="flexStudy Queue" translateY="40.0">
                      <font>
                         <Font size="30.0" />
                      </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
                   </Label>
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
                <children>
-                  <GridPane prefHeight="198.0" prefWidth="711.0">
+                  <GridPane prefHeight="241.0" prefWidth="711.0">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" maxWidth="299.1141052246094" minWidth="10.0" prefWidth="288.79571533203125" />
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="288.07373046875" minWidth="10.0" prefWidth="153.20428466796875" />
@@ -47,66 +53,81 @@
                      <children>
                         <HBox alignment="CENTER">
                            <children>
-                              <Label fx:id="fromLabelName" text="from">
+                              <Label fx:id="fromLabelName" text="from" translateY="50.0">
                                  <font>
-                                    <Font size="24.0" />
+                                    <Font name="Arial Bold" size="24.0" />
                                  </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
                               </Label>
                            </children></HBox>
                         <HBox alignment="CENTER" GridPane.columnIndex="2">
                            <children>
-                              <Label fx:id="toLabelName" text="to">
+                              <Label fx:id="toLabelName" text="to" translateY="50.0">
                                  <font>
-                                    <Font size="27.0" />
+                                    <Font name="Arial Bold" size="27.0" />
                                  </font>
                               </Label>
                            </children></HBox>
-                        <HBox alignment="CENTER" GridPane.rowIndex="1">
+                        <HBox alignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
                            <children>
-                              <Label fx:id="fromLabel" text="fromField" textOverrun="CLIP" wrapText="true">
+                              <Label fx:id="fromLabel" text="fromField" textOverrun="CLIP" translateY="100.0" wrapText="true">
                                  <font>
                                     <Font size="25.0" />
                                  </font>
                               </Label>
                            </children>
+                           <opaqueInsets>
+                              <Insets bottom="100.0" />
+                           </opaqueInsets>
                         </HBox>
                         <HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <children>
-                              <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" translateY="100.0">
                                  <image>
                                     <Image url="@../../../res/Arrow.png" />
                                  </image>
                               </ImageView>
                            </children>
                         </HBox>
-                        <HBox alignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                        <HBox alignment="CENTER" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
                            <children>
-                              <Label fx:id="toLabel" text="toField" wrapText="true">
+                              <Label fx:id="toLabel" text="toField" translateY="100.0" wrapText="true">
                                  <font>
                                     <Font size="25.0" />
                                  </font>
                               </Label>
                            </children>
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
                         </HBox>
                      </children>
+                     <HBox.margin>
+                        <Insets top="50.0" />
+                     </HBox.margin>
                   </GridPane>
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+            <HBox alignment="CENTER" prefHeight="118.0" prefWidth="900.0" GridPane.rowIndex="2">
                <children>
-                  <Button mnemonicParsing="false" onAction="#flip" text="Flip">
+                  <Button mnemonicParsing="false" onAction="#flip" text="Flip" translateY="150.0" HBox.hgrow="ALWAYS">
                      <font>
                         <Font size="27.0" />
                      </font>
                   </Button>
                </children>
             </HBox>
-            <VBox fx:id="guessBox" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="3">
+            <VBox fx:id="guessBox" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" translateY="50.0" GridPane.rowIndex="3">
                <children>
                   <Label text="Rate how well you think you did!">
                      <font>
                         <Font size="19.0" />
                      </font>
+                     <VBox.margin>
+                        <Insets top="70.0" />
+                     </VBox.margin>
                   </Label>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>

@@ -74,7 +74,7 @@
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#goBack" prefHeight="35.0" prefWidth="76.0" text="Back" textFill="RED">
+                  <Button mnemonicParsing="false" onAction="#goBack" prefHeight="35.0" prefWidth="76.0" text="Back" textFill="RED" translateY="10.0">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -83,7 +83,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="30.0" prefWidth="726.0" GridPane.columnIndex="1">
                <children>
-                  <Label fx:id="subjectTitle" text="Subject Name">
+                  <Label fx:id="subjectTitle" text="Subject Name" translateY="10.0">
                      <font>
                         <Font size="23.0" />
                      </font>

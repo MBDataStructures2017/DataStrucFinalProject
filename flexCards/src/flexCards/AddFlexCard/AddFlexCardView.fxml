@@ -15,6 +15,9 @@
                <font>
                   <Font size="22.0" />
                </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
             </Label>
             <GridPane alignment="CENTER" prefHeight="510.0" prefWidth="600.0">
               <columnConstraints>
@@ -76,47 +79,47 @@
                   </HBox>
                   <TextArea fx:id="Feild1Input" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                      <GridPane.margin>
-                        <Insets bottom="3.0" top="3.0" />
+                        <Insets bottom="3.0" right="15.0" top="3.0" />
                      </GridPane.margin>
                   </TextArea>
                   <TextArea fx:id="Feild2Input" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <GridPane.margin>
-                        <Insets bottom="3.0" top="3.0" />
+                        <Insets bottom="3.0" right="15.0" top="3.0" />
                      </GridPane.margin>
                   </TextArea>
                   <TextArea fx:id="Feild3Input" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <GridPane.margin>
-                        <Insets bottom="3.0" top="3.0" />
+                        <Insets bottom="3.0" right="15.0" top="3.0" />
                      </GridPane.margin>
                   </TextArea>
                   <TextArea fx:id="Feild4Input" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <GridPane.margin>
-                        <Insets bottom="3.0" top="3.0" />
+                        <Insets bottom="3.0" right="15.0" top="3.0" />
                      </GridPane.margin>
                   </TextArea>
                   <TextArea fx:id="Feild6Input" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                      <GridPane.margin>
-                        <Insets bottom="3.0" top="3.0" />
+                        <Insets bottom="3.0" right="15.0" top="3.0" />
                      </GridPane.margin>
                   </TextArea>
                   <TextArea fx:id="Feild5Input" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <GridPane.margin>
-                        <Insets bottom="3.0" top="3.0" />
+                        <Insets bottom="3.0" right="15.0" top="3.0" />
                      </GridPane.margin>
                   </TextArea>
                   <TextArea fx:id="Feild7Input" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
                      <GridPane.margin>
-                        <Insets bottom="3.0" top="3.0" />
+                        <Insets bottom="3.0" right="15.0" top="3.0" />
                      </GridPane.margin>
                   </TextArea>
                   <TextArea fx:id="Feild8Input" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
                      <GridPane.margin>
-                        <Insets bottom="3.0" top="3.0" />
+                        <Insets bottom="3.0" right="15.0" top="3.0" />
                      </GridPane.margin>
                   </TextArea>
                   <TextArea fx:id="Feild9Input" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
                      <GridPane.margin>
-                        <Insets bottom="3.0" top="3.0" />
+                        <Insets bottom="3.0" right="15.0" top="3.0" />
                      </GridPane.margin>
                   </TextArea>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="5">
@@ -130,6 +133,9 @@
                <font>
                   <Font size="19.0" />
                </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
             </Button>
          </children>
          <padding>

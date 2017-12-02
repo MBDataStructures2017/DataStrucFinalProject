@@ -10,14 +10,14 @@
 
 <BorderPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="flexCards.view.MainMenuController">
    <top>
-      <Label text="Welcome to flexCards!" textFill="RED" BorderPane.alignment="CENTER">
+      <Label text="Welcome to flexCards!" textFill="RED" translateY="40.0" BorderPane.alignment="CENTER">
          <font>
             <Font name="Avenir Roman" size="41.0" />
          </font>
       </Label>
    </top>
    <center>
-      <GridPane BorderPane.alignment="CENTER">
+      <GridPane translateY="50.0" BorderPane.alignment="CENTER">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>

@@ -23,13 +23,13 @@
          <children>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Label text="Your flexCards">
+                  <Label text="Your flexCards" translateY="-10.0">
                      <font>
                         <Font size="21.0" />
                      </font>
                   </Label>
                   <ListView fx:id="cards" prefHeight="427.0" prefWidth="345.0" />
-                  <Button mnemonicParsing="false" onAction="#refreshCards" text="Refresh" />
+                  <Button mnemonicParsing="false" onAction="#refreshCards" text="Refresh" translateY="10.0" />
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="30.0" GridPane.columnIndex="1">
@@ -62,7 +62,7 @@
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#goBack" text="Back" textFill="RED">
+                  <Button mnemonicParsing="false" onAction="#goBack" text="Back" textFill="RED" translateY="10.0">
                      <font>
                         <Font size="17.0" />
                      </font>
@@ -71,7 +71,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
                <children>
-                  <Label fx:id="title" text="StudySet Label">
+                  <Label fx:id="title" text="StudySet Label" translateY="10.0">
                      <font>
                         <Font size="24.0" />
                      </font>

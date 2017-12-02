@@ -11,7 +11,7 @@
    <center>
       <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <Label text="New Subject">
+            <Label text="New flexSubject">
                <font>
                   <Font size="23.0" />
                </font>
@@ -25,11 +25,17 @@
                      <font>
                         <Font size="19.0" />
                      </font>
-                  </Label>
-                  <TextField fx:id="inputLine" prefHeight="27.0" prefWidth="192.0">
                      <padding>
-                        <Insets top="10.0" />
+                        <Insets bottom="5.0" top="5.0" />
                      </padding>
+                  </Label>
+                  <TextField fx:id="inputLine" prefHeight="27.0" prefWidth="192.0" promptText="flexSubject">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" top="5.0" />
+                     </padding>
+                     <font>
+                        <Font name="Arial" size="17.0" />
+                     </font>
                   </TextField>
                </children>
             </HBox>
@@ -37,7 +43,7 @@
       </VBox>
    </center>
    <bottom>
-      <Button fx:id="submitButton" mnemonicParsing="false" onAction="#addNewSubject" text="Create" textFill="#6fff00" BorderPane.alignment="CENTER">
+      <Button fx:id="submitButton" mnemonicParsing="false" onAction="#addNewSubject" text="Create" textFill="#71d01e" BorderPane.alignment="CENTER">
          <font>
             <Font size="28.0" />
          </font>

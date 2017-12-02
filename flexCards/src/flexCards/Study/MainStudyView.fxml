@@ -26,7 +26,7 @@
          <children>
             <HBox alignment="CENTER">
                <children>
-                  <Label fx:id="titleLabel" text="Study Queue">
+                  <Label fx:id="titleLabel" text="Study Queue" translateY="20.0">
                      <font>
                         <Font size="30.0" />
                      </font>
@@ -48,30 +48,30 @@
                      <children>
                         <HBox alignment="CENTER">
                            <children>
-                              <Label fx:id="fromLabelName" text="from">
+                              <Label fx:id="fromLabelName" text="from" translateY="40.0">
                                  <font>
-                                    <Font size="24.0" />
+                                    <Font name="Arial Bold" size="24.0" />
                                  </font>
                               </Label>
                            </children></HBox>
                         <HBox alignment="CENTER" GridPane.columnIndex="2">
                            <children>
-                              <Label fx:id="toLabelName" text="to">
+                              <Label fx:id="toLabelName" text="to" translateY="40.0">
                                  <font>
-                                    <Font size="27.0" />
+                                    <Font name="Arial Bold" size="24.0" />
                                  </font>
                               </Label>
                            </children></HBox>
                         <HBox alignment="CENTER" GridPane.rowIndex="1">
                            <children>
-                              <Label fx:id="fromLabel" text="fromField" textOverrun="CLIP" wrapText="true">
+                              <Label fx:id="fromLabel" text="fromField" textOverrun="CLIP" translateY="40.0" wrapText="true">
                                  <font>
                                     <Font size="25.0" />
                                  </font>
                               </Label>
                            </children>
                         </HBox>
-                        <HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <HBox alignment="CENTER" translateY="40.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <children>
                               <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -80,7 +80,7 @@
                               </ImageView>
                            </children>
                         </HBox>
-                        <HBox alignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                        <HBox alignment="CENTER" translateY="40.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                            <children>
                               <Label fx:id="toLabel" text="toField" wrapText="true">
                                  <font>
@@ -95,14 +95,14 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
                <children>
-                  <Button mnemonicParsing="false" onAction="#flip" text="Flip">
+                  <Button mnemonicParsing="false" onAction="#flip" text="Flip" translateY="40.0">
                      <font>
                         <Font size="27.0" />
                      </font>
                   </Button>
                </children>
             </HBox>
-            <VBox fx:id="guessBox" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="4">
+            <VBox fx:id="guessBox" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" translateY="40.0" GridPane.rowIndex="4">
                <children>
                   <Label text="Rate how well you think you did!">
                      <font>
@@ -151,7 +151,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
                <children>
-                  <Label fx:id="studySetLabel" text="StudySet Name">
+                  <Label fx:id="studySetLabel" text="flexSet Name" translateY="20.0">
                      <font>
                         <Font size="35.0" />
                      </font>

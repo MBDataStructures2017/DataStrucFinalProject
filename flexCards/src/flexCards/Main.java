@@ -37,7 +37,7 @@ public class Main extends Application {
 	///////////////Logic Methods//////////////////
 	/**
 	 * Clears the text file whose relative path is specified by FilePath.
-	 * @param filePath The reletive path to the target file
+	 * @param filePath The relative path to the target file
 	 * @throws FileNotFoundException
 	 */
 	public static void clearFile(String filePath) throws FileNotFoundException {

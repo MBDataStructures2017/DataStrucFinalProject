@@ -54,7 +54,7 @@ public class MainStudyViewController implements Initializable{
 		fromLabelName.setText(queue.peek().getFromFieldName());
 		toLabelName.setText(queue.peek().getToFieldName());
 		
-		studySetLabel.setText("Study Set: " + queue.peek().getParentFlexCard().getParentStudySet().getName());
+		studySetLabel.setText("flexSet: " + queue.peek().getParentFlexCard().getParentStudySet().getName());
 	}
 	
 	///NOTE: HAVE NOT IMPLEMENTED DATA ALTERING YET
