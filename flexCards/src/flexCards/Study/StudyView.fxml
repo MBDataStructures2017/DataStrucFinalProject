@@ -27,7 +27,7 @@
                <children>
                   <Label fx:id="titleLabel" text="flexStudy Queue" translateY="40.0">
                      <font>
-                        <Font size="30.0" />
+                        <Font name="Trebuchet MS" size="30.0" />
                      </font>
                      <opaqueInsets>
                         <Insets />
@@ -55,7 +55,7 @@
                            <children>
                               <Label fx:id="fromLabelName" text="from" translateY="50.0">
                                  <font>
-                                    <Font name="Arial Bold" size="24.0" />
+                                    <Font name="Trebuchet MS Bold" size="24.0" />
                                  </font>
                                  <HBox.margin>
                                     <Insets />
@@ -66,7 +66,7 @@
                            <children>
                               <Label fx:id="toLabelName" text="to" translateY="50.0">
                                  <font>
-                                    <Font name="Arial Bold" size="27.0" />
+                                    <Font name="Trebuchet MS Bold" size="27.0" />
                                  </font>
                               </Label>
                            </children></HBox>
@@ -74,7 +74,7 @@
                            <children>
                               <Label fx:id="fromLabel" text="fromField" textOverrun="CLIP" translateY="100.0" wrapText="true">
                                  <font>
-                                    <Font size="25.0" />
+                                    <Font name="Trebuchet MS" size="25.0" />
                                  </font>
                               </Label>
                            </children>
@@ -95,7 +95,7 @@
                            <children>
                               <Label fx:id="toLabel" text="toField" translateY="100.0" wrapText="true">
                                  <font>
-                                    <Font size="25.0" />
+                                    <Font name="Trebuchet MS" size="25.0" />
                                  </font>
                               </Label>
                            </children>
@@ -114,7 +114,7 @@
                <children>
                   <Button mnemonicParsing="false" onAction="#flip" text="Flip" translateY="150.0" HBox.hgrow="ALWAYS">
                      <font>
-                        <Font size="27.0" />
+                        <Font name="Trebuchet MS" size="27.0" />
                      </font>
                   </Button>
                </children>
@@ -123,7 +123,7 @@
                <children>
                   <Label text="Rate how well you think you did!">
                      <font>
-                        <Font size="19.0" />
+                        <Font name="Trebuchet MS" size="19.0" />
                      </font>
                      <VBox.margin>
                         <Insets top="70.0" />

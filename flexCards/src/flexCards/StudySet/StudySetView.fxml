@@ -25,7 +25,7 @@
                <children>
                   <Label text="Your flexCards" translateY="-10.0">
                      <font>
-                        <Font size="21.0" />
+                        <Font name="Trebuchet MS" size="21.0" />
                      </font>
                   </Label>
                   <ListView fx:id="cards" prefHeight="427.0" prefWidth="345.0" />
@@ -34,12 +34,12 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="30.0" GridPane.columnIndex="1">
                <children>
-                  <Button mnemonicParsing="false" onAction="#startStudy" text="Start Study">
+                  <Button mnemonicParsing="false" onAction="#startStudy" text="Start Study" textFill="#123299">
                      <font>
                         <Font size="30.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#goNewFlexCard" text="New FlexCard">
+                  <Button mnemonicParsing="false" onAction="#goNewFlexCard" text="New FlexCard" textFill="#11859a">
                      <font>
                         <Font size="30.0" />
                      </font>
@@ -62,7 +62,7 @@
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#goBack" text="Back" textFill="RED" translateY="10.0">
+                  <Button mnemonicParsing="false" onAction="#goBack" text="Back" translateY="10.0">
                      <font>
                         <Font size="17.0" />
                      </font>
@@ -73,7 +73,7 @@
                <children>
                   <Label fx:id="title" text="StudySet Label" translateY="10.0">
                      <font>
-                        <Font size="24.0" />
+                        <Font name="Trebuchet MS Bold" size="24.0" />
                      </font>
                   </Label>
                </children>

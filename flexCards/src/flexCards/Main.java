@@ -137,9 +137,11 @@ public class Main extends Application {
 		loader.setLocation(Main.class.getResource("view/MainPanel.fxml"));//Path to fxml doc
 		mainLayout = loader.load();
 		Scene scene = new Scene(mainLayout);
+		scene.getStylesheets().addAll(Main.class.getResource("flexStyle.css").toExternalForm());
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
+	
 	
 	/**
 	 * Initialized and sets up a window for a subject view 

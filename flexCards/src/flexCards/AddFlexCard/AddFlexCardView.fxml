@@ -9,11 +9,11 @@
 
 <BorderPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="flexCards.AddFlexCard.AddFlexCardViewController">
    <center>
-      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #9FBDD9;" stylesheets="@../flexStyle.css" BorderPane.alignment="CENTER">
          <children>
             <Label text="New flexCard">
                <font>
-                  <Font size="22.0" />
+                  <Font name="Trebuchet MS Bold" size="22.0" />
                </font>
                <VBox.margin>
                   <Insets bottom="10.0" />
@@ -38,93 +38,150 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Label fx:id="Field1Label" text="Field 1:" />
+                        <Label fx:id="Field1Label" text="Field 1:">
+                           <font>
+                              <Font name="Trebuchet MS" size="13.0" />
+                           </font></Label>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
                      <children>
-                        <Label fx:id="Field2Label" text="Field 2:" />
+                        <Label fx:id="Field2Label" text="Field 2:">
+                           <font>
+                              <Font name="Trebuchet MS" size="13.0" />
+                           </font></Label>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
                      <children>
-                        <Label fx:id="Field3Label" text="Field 3:" />
+                        <Label fx:id="Field3Label" text="Field 3:">
+                           <font>
+                              <Font name="Trebuchet MS" size="13.0" />
+                           </font></Label>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
                      <children>
-                        <Label fx:id="Field4Label" prefHeight="46.0" prefWidth="47.0" text="Field 4:" textOverrun="CLIP" wrapText="true" />
+                        <Label fx:id="Field4Label" prefHeight="46.0" prefWidth="47.0" text="Field 4:" textOverrun="CLIP" wrapText="true">
+                           <font>
+                              <Font name="Trebuchet MS" size="13.0" />
+                           </font></Label>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="4">
                      <children>
-                        <Label fx:id="Field5Label" text="Field 5:" />
+                        <Label fx:id="Field5Label" text="Field 5:">
+                           <font>
+                              <Font name="Trebuchet MS" size="13.0" />
+                           </font></Label>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="6" />
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="6">
                      <children>
-                        <Label fx:id="Field7Label" text="Field 7:" />
+                        <Label fx:id="Field7Label" text="Field 7:">
+                           <font>
+                              <Font name="Trebuchet MS" size="13.0" />
+                           </font></Label>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="8">
                      <children>
-                        <Label fx:id="Field9Label" text="Field 9:" />
+                        <Label fx:id="Field9Label" text="Field 9:">
+                           <font>
+                              <Font name="Trebuchet MS" size="13.0" />
+                           </font></Label>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="7">
                      <children>
-                        <Label fx:id="Field8Label" text="Field 8:" />
+                        <Label fx:id="Field8Label" text="Field 8:">
+                           <font>
+                              <Font name="Trebuchet MS" size="13.0" />
+                           </font></Label>
                      </children>
                   </HBox>
-                  <TextArea fx:id="Feild1Input" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                  <TextArea fx:id="Feild1Input" promptText="field name" GridPane.columnIndex="1">
                      <GridPane.margin>
                         <Insets bottom="3.0" right="15.0" top="3.0" />
                      </GridPane.margin>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <font>
+                        <Font name="Trebuchet MS" size="13.0" />
+                     </font>
                   </TextArea>
                   <TextArea fx:id="Feild2Input" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <GridPane.margin>
                         <Insets bottom="3.0" right="15.0" top="3.0" />
                      </GridPane.margin>
+                     <font>
+                        <Font name="Trebuchet MS" size="13.0" />
+                     </font>
                   </TextArea>
                   <TextArea fx:id="Feild3Input" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <GridPane.margin>
                         <Insets bottom="3.0" right="15.0" top="3.0" />
                      </GridPane.margin>
+                     <font>
+                        <Font name="Trebuchet MS" size="13.0" />
+                     </font>
                   </TextArea>
                   <TextArea fx:id="Feild4Input" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <GridPane.margin>
                         <Insets bottom="3.0" right="15.0" top="3.0" />
                      </GridPane.margin>
+                     <font>
+                        <Font name="Trebuchet MS" size="13.0" />
+                     </font>
                   </TextArea>
                   <TextArea fx:id="Feild6Input" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                      <GridPane.margin>
                         <Insets bottom="3.0" right="15.0" top="3.0" />
                      </GridPane.margin>
+                     <font>
+                        <Font name="Trebuchet MS" size="13.0" />
+                     </font>
                   </TextArea>
                   <TextArea fx:id="Feild5Input" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <GridPane.margin>
                         <Insets bottom="3.0" right="15.0" top="3.0" />
                      </GridPane.margin>
+                     <font>
+                        <Font name="Trebuchet MS" size="13.0" />
+                     </font>
                   </TextArea>
                   <TextArea fx:id="Feild7Input" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
                      <GridPane.margin>
                         <Insets bottom="3.0" right="15.0" top="3.0" />
                      </GridPane.margin>
+                     <font>
+                        <Font name="Trebuchet MS" size="13.0" />
+                     </font>
                   </TextArea>
                   <TextArea fx:id="Feild8Input" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
                      <GridPane.margin>
                         <Insets bottom="3.0" right="15.0" top="3.0" />
                      </GridPane.margin>
+                     <font>
+                        <Font name="Trebuchet MS" size="13.0" />
+                     </font>
                   </TextArea>
                   <TextArea fx:id="Feild9Input" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
                      <GridPane.margin>
                         <Insets bottom="3.0" right="15.0" top="3.0" />
                      </GridPane.margin>
+                     <font>
+                        <Font name="Trebuchet MS" size="13.0" />
+                     </font>
                   </TextArea>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="5">
                      <children>
-                        <Label fx:id="Field6Label" text="Field 6:" />
+                        <Label fx:id="Field6Label" text="Field 6:">
+                           <font>
+                              <Font name="Trebuchet MS" size="13.0" />
+                           </font></Label>
                      </children>
                   </HBox>
                </children>

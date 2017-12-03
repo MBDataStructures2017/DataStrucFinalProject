@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="flexCards.Subject.SubjectViewController">
+<BorderPane prefHeight="600.0" prefWidth="900.0" stylesheets="@../flexStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="flexCards.Subject.SubjectViewController">
    <center>
       <GridPane prefHeight="470.0" prefWidth="900.0" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -24,9 +24,9 @@
             <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
                <children>
                   <ListView fx:id="studySets" prefHeight="467.0" prefWidth="369.0" />
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                  <HBox alignment="CENTER" pickOnBounds="false" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#goStudySet" text="Select This Study Set">
+                        <Button mnemonicParsing="false" onAction="#goStudySet" pickOnBounds="false" text="Select This Study Set" translateX="-10.0">
                            <font>
                               <Font size="19.0" />
                            </font>
@@ -42,7 +42,7 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
                <children>
-                  <Button mnemonicParsing="false" onAction="#startStudy" text="Start Main Queue" textFill="#ff7900">
+                  <Button mnemonicParsing="false" onAction="#startStudy" pickOnBounds="false" text="Start Main Queue" textFill="#123299">
                      <font>
                         <Font size="26.0" />
                      </font>
@@ -50,12 +50,11 @@
                         <Insets bottom="60.0" />
                      </VBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#goAddStudySet" text="Add New Study Set" textFill="#01e805">
+                  <Button mnemonicParsing="false" onAction="#goAddStudySet" pickOnBounds="false" text="Add New Study Set" textFill="#11859a" translateY="-40.0">
                      <font>
                         <Font size="26.0" />
                      </font>
                   </Button>
-                  <Label text="Label" />
                </children>
             </VBox>
          </children>
@@ -74,7 +73,7 @@
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#goBack" prefHeight="35.0" prefWidth="76.0" text="Back" textFill="RED" translateY="10.0">
+                  <Button mnemonicParsing="false" onAction="#goBack" prefHeight="35.0" prefWidth="76.0" text="Back" translateY="10.0">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -85,7 +84,7 @@
                <children>
                   <Label fx:id="subjectTitle" text="Subject Name" translateY="10.0">
                      <font>
-                        <Font size="23.0" />
+                        <Font name="Trebuchet MS Bold" size="23.0" />
                      </font>
                   </Label>
                </children>

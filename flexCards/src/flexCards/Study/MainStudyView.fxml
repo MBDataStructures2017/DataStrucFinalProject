@@ -28,7 +28,7 @@
                <children>
                   <Label fx:id="titleLabel" text="Study Queue" translateY="20.0">
                      <font>
-                        <Font size="30.0" />
+                        <Font name="Trebuchet MS Bold" size="30.0" />
                      </font>
                   </Label>
                </children>
@@ -58,7 +58,7 @@
                            <children>
                               <Label fx:id="toLabelName" text="to" translateY="40.0">
                                  <font>
-                                    <Font name="Arial Bold" size="24.0" />
+                                    <Font name="Trebuchet MS Bold" size="25.0" />
                                  </font>
                               </Label>
                            </children></HBox>
@@ -66,7 +66,7 @@
                            <children>
                               <Label fx:id="fromLabel" text="fromField" textOverrun="CLIP" translateY="40.0" wrapText="true">
                                  <font>
-                                    <Font size="25.0" />
+                                    <Font name="Trebuchet MS" size="25.0" />
                                  </font>
                               </Label>
                            </children>
@@ -84,7 +84,7 @@
                            <children>
                               <Label fx:id="toLabel" text="toField" wrapText="true">
                                  <font>
-                                    <Font size="25.0" />
+                                    <Font name="Trebuchet MS" size="25.0" />
                                  </font>
                               </Label>
                            </children>
@@ -97,7 +97,7 @@
                <children>
                   <Button mnemonicParsing="false" onAction="#flip" text="Flip" translateY="40.0">
                      <font>
-                        <Font size="27.0" />
+                        <Font name="Trebuchet MS" size="27.0" />
                      </font>
                   </Button>
                </children>
@@ -106,7 +106,7 @@
                <children>
                   <Label text="Rate how well you think you did!">
                      <font>
-                        <Font size="19.0" />
+                        <Font name="Trebuchet MS" size="19.0" />
                      </font>
                   </Label>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">

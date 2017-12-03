@@ -9,14 +9,14 @@
 
 <BorderPane prefHeight="600.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="flexCards.AddStudySet.AddStudySetViewController">
    <center>
-      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0" BorderPane.alignment="CENTER">
+      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0" style="-fx-background-color: #9FBDD9;" stylesheets="@../flexStyle.css" BorderPane.alignment="CENTER">
          <children>
-            <Label text="Add flexSet">
+            <Label stylesheets="@../flexStyle.css" text="Add flexSet">
                <VBox.margin>
                   <Insets top="15.0" />
                </VBox.margin>
                <font>
-                  <Font size="21.0" />
+                  <Font name="Trebuchet MS Bold" size="21.0" />
                </font>
             </Label>
             <HBox alignment="CENTER" prefHeight="48.0" prefWidth="430.0" spacing="20.0">
@@ -24,11 +24,17 @@
                   <Label text="flexSet Name:">
                      <HBox.margin>
                         <Insets top="15.0" />
-                     </HBox.margin></Label>
-                  <TextField fx:id="studySetName">
+                     </HBox.margin>
+                     <font>
+                        <Font name="Trebuchet MS" size="13.0" />
+                     </font></Label>
+                  <TextField fx:id="studySetName" promptText="flexSet name">
                      <HBox.margin>
                         <Insets top="15.0" />
-                     </HBox.margin></TextField>
+                     </HBox.margin>
+                     <font>
+                        <Font name="Trebuchet MS" size="13.0" />
+                     </font></TextField>
                </children>
             </HBox>
             <GridPane alignment="CENTER" prefHeight="551.0" prefWidth="362.0">
@@ -52,7 +58,10 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
                      <children>
-                        <Label text="Field Name" />
+                        <Label text="Field Name">
+                           <font>
+                              <Font name="Trebuchet MS" size="13.0" />
+                           </font></Label>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="43.0" prefWidth="170.0" GridPane.columnIndex="2">
@@ -60,12 +69,18 @@
                         <Label alignment="CENTER" text="Learning Objectives (What fields should you be able to know from this field?) List as &quot;F2, F3&quot;" textAlignment="CENTER" textOverrun="CLIP" wrapText="true">
                            <padding>
                               <Insets right="10.0" />
-                           </padding></Label>
+                           </padding>
+                           <font>
+                              <Font name="Trebuchet MS" size="13.0" />
+                           </font></Label>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="9">
                      <children>
-                        <TextField fx:id="field9Name" />
+                        <TextField fx:id="field9Name">
+                           <font>
+                              <Font name="Trebuchet MS" size="13.0" />
+                           </font></TextField>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="9">
@@ -73,12 +88,18 @@
                         <TextField fx:id="field9LearningObjectives">
                            <HBox.margin>
                               <Insets right="10.0" />
-                           </HBox.margin></TextField>
+                           </HBox.margin>
+                           <font>
+                              <Font name="Trebuchet MS" size="13.0" />
+                           </font></TextField>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
                      <children>
-                        <TextField fx:id="field8Name" />
+                        <TextField fx:id="field8Name">
+                           <font>
+                              <Font name="Trebuchet MS" size="13.0" />
+                           </font></TextField>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="8">
@@ -86,12 +107,18 @@
                         <TextField fx:id="field8LearningObjectives">
                            <HBox.margin>
                               <Insets right="10.0" />
-                           </HBox.margin></TextField>
+                           </HBox.margin>
+                           <font>
+                              <Font name="Trebuchet MS" size="13.0" />
+                           </font></TextField>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
                      <children>
-                        <TextField fx:id="field7Name" />
+                        <TextField fx:id="field7Name">
+                           <font>
+                              <Font name="Trebuchet MS" size="13.0" />
+                           </font></TextField>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="7">
@@ -99,12 +126,18 @@
                         <TextField fx:id="field7LearningObjectives">
                            <HBox.margin>
                               <Insets right="10.0" />
-                           </HBox.margin></TextField>
+                           </HBox.margin>
+                           <font>
+                              <Font name="Trebuchet MS" size="13.0" />
+                           </font></TextField>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
                      <children>
-                        <TextField fx:id="field6Name" />
+                        <TextField fx:id="field6Name">
+                           <font>
+                              <Font name="Trebuchet MS" size="13.0" />
+                           </font></TextField>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
@@ -112,12 +145,18 @@
                         <TextField fx:id="field6LearningObjectives">
                            <HBox.margin>
                               <Insets right="10.0" />
-                           </HBox.margin></TextField>
+                           </HBox.margin>
+                           <font>
+                              <Font name="Trebuchet MS" size="13.0" />
+                           </font></TextField>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                      <children>
-                        <TextField fx:id="field5Name" />
+                        <TextField fx:id="field5Name">
+                           <font>
+                              <Font name="Trebuchet MS" size="13.0" />
+                           </font></TextField>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
@@ -125,12 +164,18 @@
                         <TextField fx:id="field5LearningObjectives">
                            <HBox.margin>
                               <Insets right="10.0" />
-                           </HBox.margin></TextField>
+                           </HBox.margin>
+                           <font>
+                              <Font name="Trebuchet MS" size="13.0" />
+                           </font></TextField>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <children>
-                        <TextField fx:id="field4Name" />
+                        <TextField fx:id="field4Name">
+                           <font>
+                              <Font name="Trebuchet MS" size="13.0" />
+                           </font></TextField>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
@@ -138,12 +183,18 @@
                         <TextField fx:id="field4LearningObjectives">
                            <HBox.margin>
                               <Insets right="10.0" />
-                           </HBox.margin></TextField>
+                           </HBox.margin>
+                           <font>
+                              <Font name="Trebuchet MS" size="13.0" />
+                           </font></TextField>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <children>
-                        <TextField fx:id="field3Name" />
+                        <TextField fx:id="field3Name">
+                           <font>
+                              <Font name="Trebuchet MS" size="13.0" />
+                           </font></TextField>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
@@ -151,72 +202,114 @@
                         <TextField fx:id="field3LearningObjectives">
                            <HBox.margin>
                               <Insets right="10.0" />
-                           </HBox.margin></TextField>
+                           </HBox.margin>
+                           <font>
+                              <Font name="Trebuchet MS" size="13.0" />
+                           </font></TextField>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
-                        <TextField fx:id="field1Name" />
+                        <TextField fx:id="field1Name" promptText="field name">
+                           <font>
+                              <Font name="Trebuchet MS" size="13.0" />
+                           </font></TextField>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <children>
-                        <TextField fx:id="field1LearningObjectives">
+                        <TextField fx:id="field1LearningObjectives" promptText="learing objective(s)">
                            <HBox.margin>
                               <Insets right="10.0" />
-                           </HBox.margin></TextField>
+                           </HBox.margin>
+                           <font>
+                              <Font name="Trebuchet MS" size="13.0" />
+                           </font></TextField>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <children>
-                        <TextField fx:id="field2Name" />
+                        <TextField fx:id="field2Name">
+                           <font>
+                              <Font name="Trebuchet MS" size="13.0" />
+                           </font></TextField>
                      </children>
                   </HBox>
                   <Label prefHeight="17.0" prefWidth="53.0" text="Field 1:" GridPane.rowIndex="1">
                      <GridPane.margin>
                         <Insets left="10.0" />
-                     </GridPane.margin></Label>
+                     </GridPane.margin>
+                     <font>
+                        <Font name="Trebuchet MS" size="13.0" />
+                     </font></Label>
                   <Label text="Field 2:" GridPane.rowIndex="2">
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin>
                      <padding>
                         <Insets left="10.0" />
-                     </padding></Label>
+                     </padding>
+                     <font>
+                        <Font name="Trebuchet MS" size="13.0" />
+                     </font></Label>
                   <Label text="Field 3:" GridPane.rowIndex="3">
                      <padding>
                         <Insets left="10.0" />
-                     </padding></Label>
+                     </padding>
+                     <font>
+                        <Font name="Trebuchet MS" size="13.0" />
+                     </font></Label>
                   <Label text="Field 4:" GridPane.rowIndex="4">
                      <padding>
                         <Insets left="10.0" />
-                     </padding></Label>
+                     </padding>
+                     <font>
+                        <Font name="Trebuchet MS" size="13.0" />
+                     </font></Label>
                   <Label text="Field 5:" GridPane.rowIndex="5">
                      <padding>
                         <Insets left="10.0" />
-                     </padding></Label>
+                     </padding>
+                     <font>
+                        <Font name="Trebuchet MS" size="13.0" />
+                     </font></Label>
                   <Label text="Field 6:" GridPane.rowIndex="6">
                      <padding>
                         <Insets left="10.0" />
-                     </padding></Label>
+                     </padding>
+                     <font>
+                        <Font name="Trebuchet MS" size="13.0" />
+                     </font></Label>
                   <Label text="Field 7:" GridPane.rowIndex="7">
                      <padding>
                         <Insets left="10.0" />
-                     </padding></Label>
+                     </padding>
+                     <font>
+                        <Font name="Trebuchet MS" size="13.0" />
+                     </font></Label>
                   <Label text="Field 8:" GridPane.rowIndex="8">
                      <padding>
                         <Insets left="10.0" />
-                     </padding></Label>
+                     </padding>
+                     <font>
+                        <Font name="Trebuchet MS" size="13.0" />
+                     </font></Label>
                   <Label text="Field 9:" GridPane.rowIndex="9">
                      <padding>
                         <Insets left="10.0" />
-                     </padding></Label>
+                     </padding>
+                     <font>
+                        <Font name="Trebuchet MS" size="13.0" />
+                     </font></Label>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <children>
                         <TextField fx:id="field2LearningObjectives">
                            <HBox.margin>
                               <Insets right="10.0" />
-                           </HBox.margin></TextField>
+                           </HBox.margin>
+                           <font>
+                              <Font name="Trebuchet MS" size="13.0" />
+                           </font></TextField>
                      </children>
                   </HBox>
                </children>
