@@ -302,4 +302,33 @@ public class Main extends Application {
 	public static void main(String[] args) {
 		launch(args);
 	}
+
+	
+	//i cant get the FMXdoc to show when the button is clicked :(
+	public void showInstructionMenu(MainMenuController mainMenuController) {
+		// TODO Auto-generated method stub
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(Main.class.getResource("AddFlexCard/AddFlexCardView.fxml"));
+//		BorderPane addFlexCard;
+//		try {
+//			addFlexCard = loader.load();
+//		} catch (IOException e) {
+			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		
+		AddFlexCardViewController controller = loader.getController();
+		controller.initializeFeildLabels();
+		
+		
+		Stage addDialogueStage = new Stage();
+		addDialogueStage.setTitle("Add New flexCard");
+		addDialogueStage.initModality(Modality.WINDOW_MODAL);
+		addDialogueStage.initOwner(primaryStage);
+		
+//		Scene scene = new Scene(addFlexCard);
+		
+//		addDialogueStage.setScene(scene);
+		addDialogueStage.showAndWait();
+	}
 }

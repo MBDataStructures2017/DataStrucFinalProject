@@ -1,4 +1,4 @@
 
-328.8875*0<f>Donald J Trump*N/A*2016-2222*WALL*</f>281.25*225.0*246.03750000000002*234.375*
-373.095703125*0<f>Ronald Reagan*Republican*1980-1988*Oversaw the end of the cold war, Bolstered US Defense Budget*</f>296.630859375*225.0*281.25*316.40625*
-318.1640625*0<f>Barack Obama*Democrat*2008-2016*Assasination of Osama Bin Laden, Affordable care act, Post 2008 recovery*</f>237.3046875*225.0*210.9375*281.25*
+415.9875*0<f>Donald J Trump*N/A*2016-2222*WALL*</f>281.25*281.25*369.05625000000003*316.40625*
+391.845703125*0<f>Ronald Reagan*Republican*1980-1988*Oversaw the end of the cold war, Bolstered US Defense Budget*</f>296.630859375*281.25*281.25*316.40625*
+391.845703125*0<f>Barack Obama*Democrat*2008-2016*Assasination of Osama Bin Laden, Affordable care act, Post 2008 recovery*</f>296.630859375*281.25*316.40625*281.25*

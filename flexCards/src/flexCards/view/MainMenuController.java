@@ -60,4 +60,8 @@ public class MainMenuController implements Initializable{
 		// TODO Auto-generated method stub
 		
 	}
+	
+	public void instructions() {
+		main.showInstructionMenu(this);
+	}
 }

@@ -111,27 +111,27 @@
                   </Label>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#evaluate1" prefHeight="75.0" prefWidth="75.0" text="1" textFill="RED">
+                        <Button mnemonicParsing="false" onAction="#evaluate1" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: #ff3333;" text="1">
                            <font>
                               <Font size="36.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#evaluate2" prefHeight="75.0" prefWidth="75.0" text="2" textFill="#ff7900">
+                        <Button mnemonicParsing="false" onAction="#evaluate2" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: #ff8533;" text="2">
                            <font>
                               <Font size="36.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#evaluate3" prefHeight="75.0" prefWidth="75.0" text="3" textFill="#f2ff00">
+                        <Button mnemonicParsing="false" onAction="#evaluate3" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: #ffff33;" text="3">
                            <font>
                               <Font size="36.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#evaluate4" prefHeight="75.0" prefWidth="75.0" text="4" textFill="#90ff00">
+                        <Button mnemonicParsing="false" onAction="#evaluate4" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: #99ff99;" text="4">
                            <font>
                               <Font size="36.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#evaluate5" prefHeight="75.0" prefWidth="75.0" text="5" textFill="#00ff15">
+                        <Button mnemonicParsing="false" onAction="#evaluate5" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: #00ff00;" text="5">
                            <font>
                               <Font size="36.0" />
                            </font>
@@ -153,7 +153,7 @@
                <children>
                   <Label fx:id="studySetLabel" text="flexSet Name" translateY="20.0">
                      <font>
-                        <Font size="35.0" />
+                        <Font name="Trebuchet MS" size="35.0" />
                      </font>
                   </Label>
                </children>
