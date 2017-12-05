@@ -61,7 +61,8 @@ public class MainMenuController implements Initializable{
 		
 	}
 	
-	public void instructions() {
+	@FXML
+	public void instructions() throws IOException {
 		main.showInstructionMenu(this);
 	}
 }

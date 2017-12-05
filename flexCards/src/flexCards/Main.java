@@ -16,6 +16,7 @@ import Logic.Subject;
 import flexCards.AddFlexCard.AddFlexCardViewController;
 import flexCards.AddStudySet.AddStudySetViewController;
 import flexCards.AddSubject.AddSubjectViewController;
+import flexCards.Instructions.InstructionsViewController;
 import flexCards.Study.MainStudyViewController;
 import flexCards.Study.StudyViewController;
 import flexCards.StudySet.StudySetViewController;
@@ -305,10 +306,10 @@ public class Main extends Application {
 
 	
 	//i cant get the FMXdoc to show when the button is clicked :(
-	public void showInstructionMenu(MainMenuController mainMenuController) {
+	public static void showInstructionMenu(MainMenuController mainMenuController) throws IOException {
 		// TODO Auto-generated method stub
-		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(Main.class.getResource("AddFlexCard/AddFlexCardView.fxml"));
+		//FXMLLoader loader = new FXMLLoader();
+		//loader.setLocation(Main.class.getResource("AddFlexCard/AddFlexCardView.fxml"));
 //		BorderPane addFlexCard;
 //		try {
 //			addFlexCard = loader.load();
@@ -317,18 +318,24 @@ public class Main extends Application {
 //			e.printStackTrace();
 //		}
 		
-		AddFlexCardViewController controller = loader.getController();
-		controller.initializeFeildLabels();
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(Main.class.getResource("Instructions/InstructionsView.fxml"));
+		BorderPane instructions = loader.load();
+		
+		InstructionsViewController controller = loader.getController();
+		
 		
 		
 		Stage addDialogueStage = new Stage();
-		addDialogueStage.setTitle("Add New flexCard");
+		addDialogueStage.setTitle("Instructions");
 		addDialogueStage.initModality(Modality.WINDOW_MODAL);
 		addDialogueStage.initOwner(primaryStage);
 		
-//		Scene scene = new Scene(addFlexCard);
+		Scene scene = new Scene(instructions);
 		
-//		addDialogueStage.setScene(scene);
+		addDialogueStage.setScene(scene);
 		addDialogueStage.showAndWait();
+		
+	
 	}
 }
