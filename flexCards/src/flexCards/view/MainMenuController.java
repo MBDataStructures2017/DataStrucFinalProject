@@ -1,6 +1,7 @@
 package flexCards.view;
 
 import java.io.IOException;
+import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Files;
@@ -64,6 +65,7 @@ public class MainMenuController implements Initializable{
 	
 	@FXML
 	public void instructions() throws IOException, URISyntaxException {
-		main.showInstructionMenu(this);
+		//main.showInstructionMenu(this);
+		java.awt.Desktop.getDesktop().browse(new URI("https://docs.google.com/presentation/d/1wSKbHRJ0Hu808Q-tJRvVCyrsYgsUapg_VXvxnpgfrMY/edit?usp=sharing"));
 	}
 }
