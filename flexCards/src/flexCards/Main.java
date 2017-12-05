@@ -6,6 +6,8 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.PriorityQueue;
 import java.util.Scanner;
@@ -306,7 +308,7 @@ public class Main extends Application {
 
 	
 	//i cant get the FMXdoc to show when the button is clicked :(
-	public static void showInstructionMenu(MainMenuController mainMenuController) throws IOException {
+	public static void showInstructionMenu(MainMenuController mainMenuController) throws IOException, URISyntaxException {
 		// TODO Auto-generated method stub
 		//FXMLLoader loader = new FXMLLoader();
 		//loader.setLocation(Main.class.getResource("AddFlexCard/AddFlexCardView.fxml"));
@@ -317,6 +319,8 @@ public class Main extends Application {
 			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
+		
+		java.awt.Desktop.getDesktop().browse(new URI("https://docs.google.com/presentation/d/1wSKbHRJ0Hu808Q-tJRvVCyrsYgsUapg_VXvxnpgfrMY/edit?usp=sharing"));
 		
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(Main.class.getResource("Instructions/InstructionsView.fxml"));
